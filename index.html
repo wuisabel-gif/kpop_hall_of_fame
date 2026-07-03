@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Five Generations of K-pop — A Holo Catalogue</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjQTZDNDRFIi8+PHN0b3Agb2Zmc2V0PSIuMjgiIHN0b3AtY29sb3I9IiNFMDU0QTAiLz48c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjOUI2QkUwIi8+PHN0b3Agb2Zmc2V0PSIuNzIiIHN0b3AtY29sb3I9IiMzRkI2Q0YiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMyRkI1OEEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMjgiIGhlaWdodD0iMjgiIHJ4PSI3IiBmaWxsPSJ1cmwoI2cpIi8+PHJlY3QgeD0iMi44IiB5PSIyLjgiIHdpZHRoPSIyNi40IiBoZWlnaHQ9IjI2LjQiIHJ4PSI2LjIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLW9wYWNpdHk9Ii41IiBzdHJva2Utd2lkdGg9IjEiLz48dGV4dCB4PSIxNiIgeT0iMjMuNSIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjEiIGZvbnQtd2VpZ2h0PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNmZmYiPks8L3RleHQ+PC9zdmc+">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+
+    --paper:    oklch(0.976 0.006 285);
+    --paper-2:  oklch(0.945 0.010 285);
+    --surface:  oklch(0.992 0.004 285);
+    --ink:      oklch(0.215 0.022 285);
+    --ink-soft: oklch(0.215 0.022 285 / .80);
+    --muted:    oklch(0.455 0.020 286);
+    --line:     oklch(0.215 0.022 285 / .14);
+    --line-2:   oklch(0.215 0.022 285 / .08);
+    --foil-hue: 285;
+
+    --z-base:1; --z-gloss:5; --z-card:6; --z-sticky:20; --z-top:50;
+    --ease: cubic-bezier(.22,1,.36,1);
+  }
+  .era[data-gen="1"]{--foil-hue:88;}
+  .era[data-gen="2"]{--foil-hue:332;}
+  .era[data-gen="3"]{--foil-hue:276;}
+  .era[data-gen="4"]{--foil-hue:192;}
+  .era[data-gen="5"]{--foil-hue:158;}
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Hanken Grotesk",system-ui,sans-serif;
+    font-size:17px;line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  .mono{font-family:"Space Mono",monospace;font-weight:400;}
+  .fr{font-family:"Fraunces",Georgia,serif;}
+  ::selection{background:hsl(var(--foil-hue) 80% 78%);color:var(--ink);}
+
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,5vw,56px);}
+
+  a{color:inherit;}
+  a:focus-visible, .idx a:focus-visible{outline:2px solid hsl(var(--foil-hue) 70% 45%);outline-offset:3px;border-radius:3px;}
+  .grp-head:focus-visible{outline:2px solid hsl(var(--foil-hue) 70% 45%);outline-offset:2px;}
+
+  .topfoil{position:fixed;top:0;left:0;right:0;height:3px;z-index:var(--z-top);
+    background:linear-gradient(90deg,
+      hsl(88 75% 70%), hsl(332 75% 72%), hsl(276 70% 72%), hsl(192 70% 68%), hsl(158 65% 66%),
+      hsl(88 75% 70%), hsl(332 75% 72%), hsl(276 70% 72%), hsl(192 70% 68%), hsl(158 65% 66%));
+    background-size:200% 100%;opacity:.9;animation:foilslide 14s linear infinite;}
+  @keyframes foilslide{to{background-position:-200% 0;}}
+  @media (prefers-reduced-motion:reduce){.topfoil{animation:none;}}
+
+  .mast{padding:clamp(40px,9vh,96px) 0 clamp(48px,7vh,84px);}
+  .mast-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(28px,5vw,64px);align-items:center;}
+  .mast-kicker{font-family:"Space Mono",monospace;font-size:12.5px;letter-spacing:.34em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:26px;}
+  .mast h1{
+    font-family:"Fraunces",serif;font-weight:900;font-optical-sizing:auto;
+    font-size:clamp(2.7rem,7vw,5.4rem);line-height:.96;letter-spacing:-.02em;
+    text-wrap:balance;margin-bottom:.5em;}
+  .mast h1 em{font-style:italic;font-weight:500;}
+  .standfirst{max-width:46ch;color:var(--ink-soft);font-size:1.12rem;text-wrap:pretty;margin-bottom:38px;}
+
+  .idx{border-top:1px solid var(--line);}
+  .idx a{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:baseline;
+    text-decoration:none;padding:14px 4px;border-bottom:1px solid var(--line-2);
+    transition:padding-left .4s var(--ease), background .4s var(--ease);}
+  .idx a:hover,.idx a.active{padding-left:14px;background:linear-gradient(90deg,
+    hsl(var(--foil-hue) 70% 92% / .9), transparent 80%);}
+  .idx .n{font-family:"Fraunces",serif;font-weight:900;font-size:1.15rem;width:1.4em;}
+  .idx .t{font-weight:600;letter-spacing:-.01em;}
+  .idx .y{font-family:"Space Mono",monospace;font-size:12.5px;color:var(--muted);}
+
+  .card-stage{perspective:1100px;display:flex;justify-content:center;}
+  .card{
+    position:relative;width:min(330px,80vw);aspect-ratio:5/7;border-radius:16px;
+    transform-style:preserve-3d;will-change:transform;z-index:var(--z-card);
+    box-shadow:0 30px 60px -28px oklch(0.30 0.06 285 / .55), 0 4px 14px -6px oklch(0.30 0.06 285 /.4),
+      0 0 90px -10px hsl(285 78% 62% / .5);
+    transition:box-shadow .5s var(--ease);
+  }
+  .card::before{content:"";position:absolute;inset:-30px;border-radius:30px;z-index:-1;pointer-events:none;
+    background:conic-gradient(from 0deg,
+      hsl(88 85% 66% /.62), hsl(332 85% 68% /.62), hsl(276 82% 70% /.62),
+      hsl(192 82% 64% /.62), hsl(158 76% 62% /.62), hsl(88 85% 66% /.62));
+    filter:blur(30px);opacity:.72;animation:auraSpin 16s linear infinite;}
+  @keyframes auraSpin{to{transform:rotate(360deg);}}
+  @media (prefers-reduced-motion:reduce){.card::before{animation:none;}}
+  .card canvas{position:absolute;inset:0;width:100%;height:100%;border-radius:16px;display:block;
+    image-rendering:auto;}
+  .card .frame{position:absolute;inset:0;border-radius:16px;border:1px solid oklch(1 0 0 /.5);
+    box-shadow:inset 0 0 0 1px oklch(0.2 0 0 /.06);pointer-events:none;}
+  .card .gloss{position:absolute;inset:0;border-radius:16px;z-index:var(--z-gloss);pointer-events:none;
+    mix-blend-mode:soft-light;opacity:.9;}
+  .card .label{position:absolute;left:0;right:0;bottom:0;padding:18px 18px 16px;border-radius:0 0 16px 16px;
+    background:linear-gradient(to top, oklch(0.16 0.03 285 / .72), oklch(0.16 0.03 285 / 0));
+    color:oklch(0.98 0 0);pointer-events:none;}
+  .card .label .big{font-family:"Fraunces",serif;font-weight:900;font-size:1.55rem;letter-spacing:.02em;line-height:1;}
+  .card .label .sub{font-family:"Space Mono",monospace;font-size:10.5px;letter-spacing:.22em;
+    text-transform:uppercase;opacity:.85;margin-top:6px;}
+  .card .edition{position:absolute;top:14px;right:16px;font-family:"Space Mono",monospace;font-size:10px;
+    letter-spacing:.18em;color:oklch(0.99 0 0 /.92);text-shadow:0 1px 3px oklch(0.2 0 0 /.5);pointer-events:none;}
+  .card-hint{text-align:center;margin-top:18px;font-family:"Space Mono",monospace;font-size:11px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
+
+  .define{padding:clamp(40px,7vh,80px) 0;border-top:1px solid var(--line);}
+  .define-lead{font-family:"Fraunces",serif;font-weight:600;font-size:clamp(1.3rem,3vw,1.9rem);
+    line-height:1.22;max-width:24ch;text-wrap:balance;margin-bottom:40px;}
+  .define dl{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,44px);}
+  .define dt{font-family:"Fraunces",serif;font-weight:600;font-size:1.06rem;margin-bottom:6px;}
+  .define dd{color:var(--ink-soft);font-size:.97rem;max-width:34ch;text-wrap:pretty;}
+
+  .era{padding:clamp(56px,9vh,108px) 0;border-top:1px solid var(--line);}
+  .era-top{display:grid;grid-template-columns:auto 1fr auto;gap:clamp(18px,3vw,40px);align-items:start;}
+  .era-num{font-family:"Fraunces",serif;font-weight:900;font-optical-sizing:auto;
+    font-size:clamp(3.4rem,9vw,6rem);line-height:.8;letter-spacing:-.03em;
+    background:linear-gradient(150deg,
+      hsl(var(--foil-hue) 72% 66%) 0%,
+      hsl(var(--foil-hue) 58% 42%) 46%,
+      hsl(calc(var(--foil-hue) + 38) 66% 60%) 100%);
+    -webkit-background-clip:text;background-clip:text;
+    color:transparent;-webkit-text-fill-color:transparent;
+    filter:drop-shadow(0 3px 12px hsl(var(--foil-hue) 70% 55% / .28));}
+  .era-title h2{font-family:"Fraunces",serif;font-weight:900;font-size:clamp(1.7rem,4.4vw,3rem);
+    line-height:1.0;letter-spacing:-.02em;text-wrap:balance;}
+  .era-sub{font-family:"Space Mono",monospace;font-size:13px;color:var(--muted);margin-top:10px;}
+  .era-strip{width:clamp(120px,18vw,210px);aspect-ratio:3/1;border-radius:8px;overflow:hidden;
+    box-shadow:0 8px 20px -12px oklch(0.3 0.05 285 /.5), 0 0 26px -8px hsl(var(--foil-hue) 72% 56% / .45);
+    align-self:center;}
+  .era-strip canvas{width:100%;height:100%;display:block;}
+
+  .era-body{display:grid;grid-template-columns:1fr;gap:8px;margin:30px 0 6px;max-width:70ch;}
+  .era-desc{font-size:1.08rem;color:var(--ink-soft);text-wrap:pretty;}
+  .era-traits{font-family:"Space Mono",monospace;font-size:12.5px;color:var(--muted);
+    letter-spacing:.02em;margin-top:18px;}
+
+  .roster-head{display:flex;align-items:baseline;gap:14px;margin:42px 0 20px;}
+  .roster-head .lbl{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--muted);}
+  .roster-head .rule{flex:1;height:1px;background:var(--line);}
+
+  .feat, .index{display:grid;grid-template-columns:1fr 1fr;column-gap:42px;align-items:start;}
+  .feat{margin-bottom:0;}
+  @media (max-width:620px){.feat, .index{grid-template-columns:1fr;column-gap:0;}}
+  .grp{border-bottom:1px solid var(--line-2);min-width:0;}
+  .grp-head{width:100%;display:grid;grid-template-columns:auto 1fr auto;gap:13px;align-items:center;
+    background:none;border:0;color:inherit;font:inherit;text-align:left;cursor:pointer;
+    padding:13px 8px;border-radius:8px;transition:background .35s var(--ease), padding-left .35s var(--ease);}
+  .grp-head:hover, .grp.open > .grp-head{background:hsl(var(--foil-hue) 70% 93% / .85);padding-left:14px;}
+  .grp-txt{min-width:0;}
+  .grp-txt .nm{display:block;font-weight:600;font-size:1.02rem;letter-spacing:-.005em;line-height:1.2;}
+  .grp-txt .mt{display:block;font-family:"Space Mono",monospace;font-size:12px;color:var(--muted);margin-top:3px;}
+
+  .grp-cta{display:flex;align-items:center;gap:9px;}
+  .grp-cta .spot{width:18px;height:18px;display:flex;opacity:.5;transition:opacity .3s var(--ease),transform .3s var(--ease);}
+  .grp-cta .spot svg{width:100%;height:100%;display:block;}
+  .spot svg{width:100%;height:100%;display:block;}
+  .grp-chev{width:13px;height:13px;color:var(--muted);transition:transform .4s var(--ease);flex:none;}
+  .grp-chev svg{width:100%;height:100%;display:block;}
+  .grp.open .grp-cta .spot{opacity:1;transform:scale(1.08);}
+  .grp.open .grp-chev{transform:rotate(180deg);color:hsl(var(--foil-hue) 60% 42%);}
+
+  .grp-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease);}
+  .grp.open .grp-panel{grid-template-rows:1fr;}
+  .grp-inner{overflow:hidden;min-height:0;}
+  .grp-pad{padding:6px 8px 18px;}
+  @media (prefers-reduced-motion:reduce){.grp-panel{transition:none;}}
+
+  .stick{flex:none;width:22px;height:26px;display:inline-flex;align-items:center;justify-content:center;
+    font-size:18px;line-height:1;font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif;
+    filter:drop-shadow(0 0 3px var(--gw));transition:filter .35s var(--ease);}
+  .grp-head:hover .stick, .grp.open .stick{filter:drop-shadow(0 0 6px var(--gw));}
+  @media (prefers-reduced-motion:reduce){.stick{transition:none;}}
+
+  .thumb{position:relative;flex:none;width:44px;height:44px;border-radius:12px;overflow:hidden;
+    display:flex;align-items:center;justify-content:center;font-size:20px;line-height:1;
+    background:hsl(var(--foil-hue) 70% 90%);
+    box-shadow:inset 0 0 0 1px hsl(var(--foil-hue) 60% 68% / .6), 0 0 16px -4px hsl(var(--foil-hue) 78% 56% / .55);
+    transition:transform .35s var(--ease), box-shadow .35s var(--ease);}
+  .grp-head:hover .thumb, .grp.open .thumb{transform:scale(1.05);
+    box-shadow:inset 0 0 0 1px hsl(var(--foil-hue) 70% 72% / .8), 0 0 22px -3px hsl(var(--foil-hue) 80% 56% / .7);}
+  .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .55s var(--ease);}
+  .thumb img.loaded{opacity:1;}
+  .thumb::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+    background:linear-gradient(135deg, hsl(var(--foil-hue) 85% 72% / .32), transparent 55%);
+    mix-blend-mode:soft-light;}
+  .thumb-sm{width:34px;height:34px;border-radius:10px;font-size:16px;}
+
+  .player{position:relative;border-radius:12px;overflow:hidden;min-height:152px;
+    background:oklch(0.20 0.02 285);box-shadow:0 12px 28px -18px oklch(0.30 0.06 285 / .55);}
+  .player-fallback{position:absolute;inset:0;z-index:1;display:flex;align-items:center;
+    justify-content:center;gap:11px;padding:0 18px;text-align:center;text-decoration:none;
+    color:oklch(0.97 0 0);font-weight:600;font-size:.95rem;}
+  .player-fallback .spot{width:22px;height:22px;flex:none;}
+  .player-fallback:hover{text-decoration:underline;}
+  .spot-embed{position:relative;z-index:2;width:100%;height:152px;border:0;display:block;}
+
+  .grp-link{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);
+    font-weight:600;font-size:.92rem;padding:13px 16px;border-radius:10px;
+    background:hsl(var(--foil-hue) 65% 94% / .9);border:1px solid hsl(var(--foil-hue) 50% 80% / .7);
+    transition:transform .25s var(--ease);}
+  .grp-link .spot{width:18px;height:18px;flex:none;}
+  .grp-link:hover{transform:translateY(-2px);box-shadow:0 14px 30px -18px hsl(var(--foil-hue) 70% 45% / .55);}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease), transform .7s var(--ease);}
+  .reveal.in{opacity:1;transform:none;}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none;}}
+
+  .note{margin-top:26px;font-size:.92rem;color:var(--muted);max-width:64ch;text-wrap:pretty;}
+  .note em{font-style:italic;}
+
+  footer{border-top:1px solid var(--line);padding:clamp(56px,8vh,96px) 0 clamp(70px,9vh,110px);}
+  footer .close{font-family:"Fraunces",serif;font-weight:900;font-size:clamp(1.6rem,4.5vw,2.8rem);
+    line-height:1.06;letter-spacing:-.02em;max-width:20ch;text-wrap:balance;margin-bottom:24px;}
+  footer p{color:var(--ink-soft);max-width:66ch;text-wrap:pretty;}
+  footer .sig{margin-top:36px;font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--muted);}
+
+  @media (max-width:840px){
+    .mast-grid{grid-template-columns:1fr;}
+    .card-stage{order:-1;margin-bottom:8px;}
+    .define dl{grid-template-columns:1fr;gap:22px;}
+    .era-top{grid-template-columns:auto 1fr;}
+    .era-strip{grid-column:1 / -1;width:100%;aspect-ratio:5/1;margin-top:6px;}
+  }
+
+  .tourzone{--foil-hue:312;}
+  .tour-head{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:14px;}
+  .tour-head h2{font-size:clamp(2rem,5.4vw,3.2rem);line-height:1;letter-spacing:-.02em;}
+  .live{display:inline-flex;align-items:center;gap:8px;font-family:"Space Mono",monospace;font-size:11px;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--muted);}
+  .live .dot{width:9px;height:9px;border-radius:50%;background:hsl(350 85% 58%);animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 hsl(350 85% 58% / .55);}70%{box-shadow:0 0 0 9px hsl(350 85% 58% / 0);}100%{box-shadow:0 0 0 0 hsl(350 85% 58% / 0);}}
+  @media (prefers-reduced-motion:reduce){.live .dot{animation:none;}}
+
+  .ticker{position:relative;overflow:hidden;margin:22px 0 32px;padding:2px 0;
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+            mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);}
+  .ticker-track{display:flex;width:max-content;animation:tscroll 40s linear infinite;}
+  .ticker:hover .ticker-track{animation-play-state:paused;}
+  @keyframes tscroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  @media (prefers-reduced-motion:reduce){.ticker-track{animation:none;flex-wrap:wrap;width:auto;}}
+  .tk{display:inline-flex;align-items:center;gap:9px;padding:13px 24px;white-space:nowrap;
+    font-family:"Space Mono",monospace;font-size:13px;color:var(--ink-soft);}
+  .tk .e{font-size:17px;}
+  .tk .t{color:var(--muted);}
+  .tk .sep{color:hsl(var(--foil-hue) 60% 58%);font-size:11px;}
+
+  .tours{display:grid;grid-template-columns:repeat(auto-fill,minmax(242px,1fr));gap:14px;margin-top:6px;}
+  .tcard{position:relative;border:1px solid var(--line);border-radius:14px;background:var(--surface);
+    padding:18px 18px 17px;overflow:hidden;
+    transition:transform .4s var(--ease),border-color .4s var(--ease),box-shadow .4s var(--ease);}
+  .tcard::before{content:"";position:absolute;inset:0;opacity:.07;pointer-events:none;
+    background:radial-gradient(125% 85% at 0% 0%, hsl(var(--ch) 90% 60%), transparent 58%);}
+  .tcard:hover{transform:translateY(-3px);border-color:hsl(var(--ch) 65% 62% / .55);
+    box-shadow:0 16px 34px -22px hsl(var(--ch) 70% 45% / .6);}
+  .tcard .ico{font-size:25px;line-height:1;filter:drop-shadow(0 0 7px hsl(var(--ch) 85% 60% / .7));}
+  .tcard .act{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.16rem;margin-top:9px;line-height:1.15;}
+  .tcard .tour{color:var(--ink-soft);font-size:.95rem;margin-top:2px;line-height:1.4;}
+  .tcard .tmeta{margin-top:13px;display:flex;flex-direction:column;gap:6px;
+    padding-top:12px;border-top:1px solid var(--line);}
+  .tcard .tmeta .ln{display:flex;align-items:flex-start;gap:9px;
+    font-family:"Space Mono",monospace;font-size:11.5px;line-height:1.35;color:var(--ink-soft);}
+  .tcard .tmeta .ln .k{flex:none;font-size:13px;line-height:1.2;width:16px;text-align:center;
+    filter:drop-shadow(0 0 4px hsl(var(--ch) 80% 60% / .55));}
+  .tcard .tmeta .ln .v{color:var(--muted);}
+  .tcard .tmeta .ln .v b{color:var(--ink-soft);font-weight:700;}
+  .tstatus{position:absolute;top:15px;right:15px;display:inline-flex;align-items:center;gap:6px;
+    font-family:"Space Mono",monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;
+    padding:3px 9px 3px 7px;border-radius:999px;border:1px solid;white-space:nowrap;}
+  .tstatus .d{width:6px;height:6px;border-radius:50%;flex:none;}
+  .tstatus.s-on{color:#1d8a5f;background:hsl(158 60% 55% / .14);border-color:hsl(158 52% 48% / .32);}
+  .tstatus.s-on .d{background:#2BA178;box-shadow:0 0 6px hsl(158 70% 50% / .6);}
+  .tstatus.s-soon{color:#9a6a16;background:hsl(40 72% 52% / .15);border-color:hsl(40 62% 48% / .32);}
+  .tstatus.s-soon .d{background:#D9982E;box-shadow:0 0 6px hsl(40 80% 52% / .6);}
+  .tstatus.s-out{color:#a23b48;background:hsl(350 60% 58% / .13);border-color:hsl(350 52% 54% / .3);}
+  .tstatus.s-out .d{background:#E84A5F;}
+  .tcard .tag{display:inline-block;margin-top:12px;font-family:"Space Mono",monospace;font-size:10px;
+    letter-spacing:.13em;text-transform:uppercase;color:hsl(var(--ch) 42% 40%);
+    background:hsl(var(--ch) 70% 60% / .12);border:1px solid hsl(var(--ch) 60% 55% / .26);
+    padding:3px 9px;border-radius:999px;}
+  .tour-foot{margin-top:22px;font-size:.86rem;color:var(--muted);max-width:72ch;text-wrap:pretty;}
+  .tcard .tfoot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:14px;}
+  .tcard .tfoot .tag{margin-top:0;}
+  .tcard .tbuy{text-decoration:none;font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:.82rem;color:#fff;
+    background:hsl(var(--ch) 58% 47%);padding:8px 13px;border-radius:999px;white-space:nowrap;transition:transform .25s var(--ease),box-shadow .25s var(--ease);}
+  .tcard .tbuy:hover{transform:translateY(-2px);box-shadow:0 10px 22px -12px hsl(var(--ch) 70% 45% / .8);}
+  /* newest releases */
+  .releasezone{--foil-hue:300;}
+  .releases{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;margin-top:6px;}
+  .rcard{display:flex;gap:14px;align-items:center;position:relative;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:14px;
+    transition:transform .4s var(--ease),border-color .4s var(--ease),box-shadow .4s var(--ease);}
+  .rcard:hover{transform:translateY(-3px);border-color:hsl(var(--rh) 65% 62% / .55);box-shadow:0 16px 34px -22px hsl(var(--rh) 70% 45% / .6);}
+  .rcard .rthumb{position:relative;flex:none;width:62px;height:62px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:24px;
+    background:hsl(var(--rh) 70% 90%);box-shadow:inset 0 0 0 1px hsl(var(--rh) 60% 68% / .6), 0 0 14px -4px hsl(var(--rh) 78% 56% / .5);}
+  .rcard .rthumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s var(--ease);}
+  .rcard .rthumb img.loaded{opacity:1;}
+  .rcard .rbody{min-width:0;flex:1;}
+  .rcard .ra{font-family:"Space Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+  .rcard .rt{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.1rem;line-height:1.15;margin:3px 0 7px;color:var(--ink);text-wrap:balance;}
+  .rcard .rmeta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .rcard .rty{font-family:"Space Mono",monospace;font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:hsl(var(--rh) 42% 38%);
+    background:hsl(var(--rh) 70% 60% / .14);border:1px solid hsl(var(--rh) 60% 55% / .28);padding:2px 8px;border-radius:999px;}
+  .rcard .rd{font-family:"Space Mono",monospace;font-size:11px;color:var(--muted);}
+  .rcard .rlisten{flex:none;text-decoration:none;font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:.82rem;color:var(--ink);
+    padding:8px 12px;border-radius:999px;background:hsl(var(--rh) 65% 94% / .9);border:1px solid hsl(var(--rh) 50% 80% / .7);transition:transform .25s var(--ease);}
+  .rcard .rlisten:hover{transform:translateY(-2px);}
+
+  .culture{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:18px 22px;margin-top:4px;}
+  .cul{display:flex;gap:12px;align-items:flex-start;}
+  .cul .ce{font-size:22px;line-height:1.1;flex:none;}
+  .cul h4{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:1.02rem;margin-bottom:2px;}
+  .cul p{font-size:.89rem;color:var(--muted);line-height:1.5;}
+
+  /* ===================== THE HALL OF ERAS — entry experience ===================== */
+  .hall{transition:opacity .45s var(--ease);}
+  .hall.fade{opacity:0;}
+  .hall.gone{display:none;}
+  .viewport{position:fixed;inset:0;overflow:hidden;z-index:1;perspective:820px;perspective-origin:50% 47%;
+    background:radial-gradient(120% 90% at 50% 38%, #1a1230 0%, #0c0820 42%, #060410 78%, #040208 100%);transform-style:preserve-3d;}
+  .viewport::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:40;
+    background:radial-gradient(120% 80% at 50% 46%, transparent 40%, rgba(4,2,10,.5) 78%, rgba(3,1,7,.92) 100%);}
+  .world{position:absolute;left:0;top:0;width:100%;height:100%;transform-style:preserve-3d;will-change:transform;transform:translateZ(calc(var(--hz,0) * 1px));}
+  .ring{position:absolute;left:50%;top:50%;width:1240px;height:760px;margin:-380px 0 0 -620px;border-radius:10px;transform-style:preserve-3d;
+    border:2px solid hsl(var(--h) 85% 62% / .42);box-shadow:0 0 60px hsl(var(--h) 85% 55% / .28), inset 0 0 90px hsl(var(--h) 80% 40% / .14);}
+  .floorglow{position:fixed;left:0;right:0;bottom:0;height:34vh;z-index:30;pointer-events:none;
+    background:linear-gradient(180deg, transparent, rgba(120,80,220,.05) 30%, rgba(150,90,230,.12));
+    -webkit-mask-image:linear-gradient(180deg,transparent,#000 60%);mask-image:linear-gradient(180deg,transparent,#000 60%);}
+  .floorgrid{position:fixed;left:50%;bottom:-2px;width:200vw;height:38vh;margin-left:-100vw;z-index:29;pointer-events:none;
+    transform:perspective(420px) rotateX(62deg);transform-origin:bottom center;opacity:.5;
+    background-image:repeating-linear-gradient(90deg, transparent 0 78px, hsl(280 80% 65% /.5) 78px 80px),repeating-linear-gradient(0deg, transparent 0 78px, hsl(280 70% 60% /.35) 78px 80px);
+    -webkit-mask-image:radial-gradient(80% 100% at 50% 100%, #000, transparent 75%);mask-image:radial-gradient(80% 100% at 50% 100%, #000, transparent 75%);}
+  .club{position:absolute;left:50%;top:50%;width:300px;height:460px;transform-style:preserve-3d;backface-visibility:hidden;}
+  .club .sign{position:absolute;left:50%;top:-52px;transform:translateX(-50%);white-space:nowrap;font-family:"Fraunces",serif;font-weight:900;font-size:30px;letter-spacing:.01em;line-height:1;
+    color:hsl(var(--h) 90% 82%);text-shadow:0 0 8px hsl(var(--h) 90% 60%), 0 0 22px hsl(var(--h) 90% 55% / .8), 0 0 44px hsl(var(--h) 85% 50% / .6);}
+  .club .frame{position:absolute;inset:0;border-radius:14px;overflow:hidden;background:linear-gradient(180deg, hsl(var(--h) 40% 16%), hsl(var(--h) 45% 9%));
+    border:2px solid hsl(var(--h) 85% 65% / .7);box-shadow:0 0 40px hsl(var(--h) 85% 55% / .5), 0 0 90px hsl(var(--h) 80% 50% / .4), inset 0 0 50px hsl(var(--h) 70% 40% / .35);
+    display:flex;align-items:center;justify-content:center;font-size:64px;}
+  .club .frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s var(--ease);}
+  .club .frame img.loaded{opacity:1;}
+  .club .frame::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(150deg, hsl(var(--h) 90% 75% / .28), transparent 45%),linear-gradient(0deg, hsl(var(--h) 60% 20% / .6), transparent 38%);mix-blend-mode:screen;}
+  .club .gen{position:absolute;left:0;right:0;bottom:14px;text-align:center;z-index:3;font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.8);}
+  .club .spill{position:absolute;left:-30%;right:-30%;bottom:-90px;height:120px;border-radius:50%;background:radial-gradient(ellipse at 50% 40%, hsl(var(--h) 85% 60% / .55), transparent 70%);filter:blur(14px);}
+  .club{cursor:pointer;}
+  .club-inner{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .75s var(--ease);}
+  .club.flipped .club-inner{transform:rotateY(180deg);}
+  .cface{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;}
+  .cback{transform:rotateY(180deg);display:flex;align-items:center;justify-content:center;padding:22px;color:#fff;
+    background:linear-gradient(180deg, hsl(var(--h) 46% 15%), hsl(var(--h) 52% 8%));border:2px solid hsl(var(--h) 85% 65% / .7);
+    box-shadow:0 0 40px hsl(var(--h) 85% 55% / .45), inset 0 0 50px hsl(var(--h) 70% 40% / .3);}
+  .bk{width:100%;}
+  .bk-name{font-family:"Fraunces",serif;font-weight:900;font-size:1.42rem;line-height:1.02;margin-bottom:15px;color:hsl(var(--h) 90% 85%);text-shadow:0 0 14px hsl(var(--h) 85% 55%);text-wrap:balance;}
+  .bk dl{display:grid;gap:9px;margin:0;}
+  .bk dl > div{display:flex;flex-direction:column;gap:2px;border-bottom:1px solid hsl(var(--h) 60% 62% / .25);padding-bottom:8px;}
+  .bk dt{font-family:"Space Mono",monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:hsl(var(--h) 65% 82%);opacity:.85;}
+  .bk dd{font-family:"Hanken Grotesk",sans-serif;font-size:.95rem;font-weight:600;margin:0;}
+  .bk-listen{margin-top:15px;display:inline-block;text-decoration:none;font-family:"Space Mono",monospace;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:#0a0712;background:hsl(var(--h) 80% 72%);padding:8px 14px;border-radius:999px;font-weight:700;}
+  .fliphint{position:absolute;top:12px;right:12px;z-index:4;font-family:"Space Mono",monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;
+    color:#fff;background:hsl(var(--h) 50% 20% / .7);border:1px solid hsl(var(--h) 70% 70% / .5);padding:4px 8px;border-radius:999px;}
+  .hud{position:fixed;z-index:60;left:0;right:0;bottom:26px;display:flex;justify-content:center;pointer-events:none;}
+  .hud .inner{display:flex;align-items:center;gap:14px;padding:10px 18px;border-radius:999px;background:rgba(12,8,26,.62);backdrop-filter:blur(10px);
+    border:1px solid hsl(var(--h,280) 80% 60% / .4);box-shadow:0 8px 30px rgba(0,0,0,.5), 0 0 30px hsl(var(--h,280) 80% 55% / .25);transition:border-color .5s,box-shadow .5s;}
+  .hud .dot{width:9px;height:9px;border-radius:50%;background:hsl(var(--h,280) 85% 62%);box-shadow:0 0 10px hsl(var(--h,280) 85% 60%);}
+  .hud .lab{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.55);}
+  .hud .nm{font-family:"Fraunces",serif;font-weight:900;font-size:18px;line-height:1;color:#fff;}
+  .hud .era{font-family:"Space Mono",monospace;font-size:11px;color:hsl(var(--h,280) 80% 75%);letter-spacing:.06em;}
+  .topbar{position:fixed;z-index:60;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:18px 24px;pointer-events:none;}
+  .topbar .title{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.6);}
+  .topbar .skip{pointer-events:auto;cursor:pointer;color:rgba(255,255,255,.8);font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+    padding:9px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(12,8,26,.5);backdrop-filter:blur(8px);transition:border-color .3s,color .3s;}
+  .topbar .skip:hover{color:#fff;border-color:hsl(280 80% 65% /.6);}
+  .intro{position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;transition:opacity .8s var(--ease);
+    background:radial-gradient(125% 82% at 50% 46%, rgba(7,5,16,.93) 0%, rgba(7,5,16,.82) 40%, rgba(7,5,16,.52) 72%, rgba(7,5,16,.12) 100%);
+    -webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);}
+  .intro > *{position:relative;}
+  .intro .eyebrow{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:hsl(280 80% 78%);margin-bottom:22px;text-shadow:0 0 18px hsl(280 85% 60% /.7);}
+  .intro h1{font-family:"Fraunces",serif;font-weight:900;font-size:clamp(2.6rem,8vw,5.6rem);line-height:.95;letter-spacing:-.02em;
+    background:linear-gradient(100deg,#A6C44E,#E054A0,#9B6BE0,#3FB6CF,#2FB58A);-webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 4px 30px hsl(280 80% 55% /.5));margin-bottom:18px;text-wrap:balance;max-width:14ch;}
+  .intro p{max-width:42ch;color:rgba(255,255,255,.7);font-size:1.05rem;line-height:1.5;margin-bottom:30px;text-wrap:pretty;}
+  .intro .hint{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.5);display:inline-flex;align-items:center;gap:10px;}
+  .intro .hint .arr{animation:bob 1.6s var(--ease) infinite;}
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
+  .scrolled .intro,.entered .intro{opacity:0;pointer-events:none;}
+  .intro .enter{pointer-events:auto;cursor:pointer;font-family:"Hanken Grotesk",sans-serif;font-weight:600;font-size:15px;color:#0a0712;
+    background:linear-gradient(100deg,#C492E6,#9B6BE0);border:0;border-radius:999px;padding:14px 28px;box-shadow:0 10px 30px hsl(276 80% 55% / .5), inset 0 0 0 1px hsl(276 80% 80% / .6);
+    margin-bottom:20px;display:inline-flex;align-items:center;gap:10px;transition:transform .25s var(--ease),box-shadow .25s var(--ease);}
+  .intro .enter:hover{transform:translateY(-2px);box-shadow:0 16px 42px hsl(276 80% 55% / .65);}
+  .intro .guide{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:6px auto 18px;max-width:580px;}
+  .intro .gi{display:inline-flex;align-items:center;gap:8px;font-family:"Space Mono",monospace;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    color:rgba(255,255,255,.85);background:rgba(12,8,26,.6);border:1px solid hsl(280 70% 65% / .35);backdrop-filter:blur(6px);padding:8px 13px;border-radius:999px;}
+  .intro .gi b{color:hsl(280 85% 80%);font-size:13px;line-height:1;}
+  .musicbar{position:fixed;z-index:55;left:22px;bottom:24px;width:min(340px,90vw);background:rgba(12,8,26,.72);backdrop-filter:blur(12px);
+    border:1px solid hsl(280 80% 62% / .4);border-radius:16px;padding:10px 10px 8px;box-shadow:0 12px 38px rgba(0,0,0,.55), 0 0 30px hsl(280 80% 55% / .22);}
+  .musicbar .mlabel{display:flex;align-items:center;gap:10px;padding:2px 6px 9px;font-family:"Space Mono",monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.72);}
+  .musicbar #spotify-embed{border-radius:12px;overflow:hidden;min-height:80px;}
+  .meq{display:inline-flex;align-items:flex-end;gap:2px;height:13px;}
+  .meq i{width:3px;height:100%;background:hsl(280 85% 68%);border-radius:2px;transform-origin:bottom;animation:eq 1s ease-in-out infinite;}
+  .meq i:nth-child(2){animation-delay:.2s;background:hsl(330 85% 68%);}
+  .meq i:nth-child(3){animation-delay:.4s;background:hsl(192 80% 64%);}
+  .meq i:nth-child(4){animation-delay:.1s;background:hsl(158 75% 60%);}
+  @keyframes eq{0%,100%{transform:scaleY(.35);}50%{transform:scaleY(1);}}
+  .hall-spacer{position:relative;width:100%;}
+  html, body{touch-action:pan-y;}
+  .catalog{position:relative;z-index:2;background:var(--paper);display:none;}
+  body.in-catalog .catalog{display:block;}
+  body.in-catalog .hall, body.in-catalog .hall-spacer{display:none;}
+  /* end-of-hall gate — choose to enter the catalogue */
+  .endgate{position:fixed;inset:0;z-index:70;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;
+    opacity:0;pointer-events:none;transition:opacity .6s var(--ease);}
+  .endgate.show{opacity:1;pointer-events:auto;}
+  .endgate .eg{position:relative;max-width:560px;border-radius:26px;padding:46px 42px;text-align:center;isolation:isolate;
+    background:linear-gradient(180deg, rgba(20,14,40,.86), rgba(9,6,20,.93));backdrop-filter:blur(14px);
+    box-shadow:0 30px 80px rgba(0,0,0,.6), 0 0 70px hsl(158 70% 55% / .3);}
+  .endgate .eg::before{content:"";position:absolute;inset:-1.5px;border-radius:27px;z-index:-1;padding:1.5px;
+    background:conic-gradient(from 0deg,#A6C44E,#E054A0,#9B6BE0,#3FB6CF,#2FB58A,#A6C44E);
+    -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;
+    mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask-composite:exclude;
+    animation:auraSpin 14s linear infinite;}
+  .endgate .eg::after{content:"";position:absolute;inset:-34px;border-radius:42px;z-index:-2;pointer-events:none;filter:blur(42px);opacity:.6;
+    background:conic-gradient(from 0deg,hsl(88 85% 66% /.5),hsl(332 85% 68% /.5),hsl(276 82% 70% /.5),hsl(192 82% 64% /.5),hsl(158 76% 62% /.5),hsl(88 85% 66% /.5));
+    animation:auraSpin 18s linear infinite;}
+  .endgate .eyebrow{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:hsl(158 75% 76%);margin-bottom:18px;}
+  .endgate h2{font-family:"Fraunces",serif;font-weight:900;font-size:clamp(1.9rem,5vw,2.9rem);line-height:1.02;letter-spacing:-.02em;margin-bottom:28px;text-wrap:balance;
+    background:linear-gradient(100deg,#A6C44E,#E054A0,#9B6BE0,#3FB6CF,#2FB58A);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;
+    filter:drop-shadow(0 3px 18px hsl(280 80% 55% / .45));}
+  #catalogBtn{font-size:16px;padding:16px 34px;background:linear-gradient(100deg,#3FB6CF,#2FB58A);color:#06120e;
+    box-shadow:0 14px 36px hsl(158 70% 42% / .55), inset 0 0 0 1px hsl(158 85% 88% / .6);}
+  #catalogBtn:hover{box-shadow:0 20px 48px hsl(158 70% 42% / .68);}
+  .endgate .eg-note{margin-top:18px;font-family:"Space Mono",monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.58);}
+  .intro .tagline{max-width:46ch;margin:2px auto 22px;font-size:1rem;line-height:1.4;color:rgba(255,255,255,.8);text-shadow:0 2px 14px rgba(6,3,16,.85);text-wrap:balance;}
+  .backhall{position:fixed;z-index:56;right:22px;bottom:26px;display:none;align-items:center;gap:8px;cursor:pointer;
+    font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+    padding:10px 15px;border-radius:999px;border:1px solid var(--line);background:var(--surface);box-shadow:0 8px 24px rgba(48,44,74,.2);
+    transition:transform .25s var(--ease),border-color .25s var(--ease);}
+  body.in-catalog .backhall{display:inline-flex;}
+  .backhall:hover{transform:translateY(-2px);border-color:hsl(var(--foil-hue) 60% 60%);}
+  @media (prefers-reduced-motion:reduce){.intro .hint .arr{animation:none;}.meq i{animation:none;}}
+</style>
+</head>
+<body>
+
+<div class="hall" id="hall">
+  <div class="viewport"><div class="world" id="world"></div></div>
+  <div class="floorglow"></div>
+  <div class="floorgrid"></div>
+  <div class="topbar">
+    <span class="title">Kpop Crush · The Hall of Eras</span>
+    <button class="skip" id="skipBtn">Skip to catalogue ↓</button>
+  </div>
+  <div class="hud"><div class="inner" id="hud">
+    <span class="dot"></span>
+    <div><div class="lab">Now passing</div><div class="nm fr" id="hudName">—</div></div>
+    <div class="era" id="hudEra"></div>
+  </div></div>
+  <div class="intro" id="intro">
+    <div class="eyebrow">A holographic walk · five generations</div>
+    <h1 class="fr">The Hall of Eras</h1>
+    <p class="tagline">A 3D holographic walk through five generations of K-pop.</p>
+    <button class="enter" id="enterBtn">▶ Enter with sound</button>
+    <div class="guide">
+      <span class="gi"><b>↑</b> Scroll up to walk forward</span>
+      <span class="gi"><b>⟳</b> Tap a doorway for group info</span>
+      <span class="gi"><b>→</b> Reach the top to enter the catalogue</span>
+    </div>
+    <div class="hint"><span class="arr">↑</span> scroll up to walk <span class="arr">↑</span></div>
+  </div>
+  <div class="endgate" id="endgate">
+    <div class="eg">
+      <div class="eyebrow">✦ You’ve reached the present ✦</div>
+      <h2 class="fr">Five generations, walked.</h2>
+      <button class="enter" id="catalogBtn">Enter the catalogue →</button>
+      <div class="eg-note">21 acts · 5 eras · live 2026 tours &amp; releases</div>
+    </div>
+  </div>
+</div>
+
+<div class="musicbar" id="musicbar">
+  <div class="mlabel"><span class="meq"><i></i><i></i><i></i><i></i></span> K-Pop ON! (온) · soundtrack</div>
+  <div id="spotify-embed"></div>
+</div>
+
+<button class="backhall" id="backHall">↑ Back to the Hall</button>
+
+<div class="hall-spacer" id="hallSpacer" aria-hidden="true"></div>
+
+<main class="catalog">
+<div class="topfoil" aria-hidden="true"></div>
+
+<div class="wrap">
+
+  <header class="mast">
+    <div class="mast-grid">
+      <div>
+        <div class="mast-kicker">A field catalogue · 1996 → present</div>
+        <h1 class="fr">Five generations<br>of <em>K-pop</em>.</h1>
+        <p class="standfirst">The idol industry rewrites its own rules about every five years — new platform, new sound, new fandom. Tilt the card, then browse the eras below.</p>
+        <nav class="idx" aria-label="The five generations">
+          <a href="#gen1"><span class="n fr">1</span><span class="t">The Founding Era</span><span class="y">’96–’03</span></a>
+          <a href="#gen2"><span class="n fr">2</span><span class="t">The Golden Age</span><span class="y">’05–’11</span></a>
+          <a href="#gen3"><span class="n fr">3</span><span class="t">The Global Breakthrough</span><span class="y">’12–’17</span></a>
+          <a href="#gen4"><span class="n fr">4</span><span class="t">The Viral Era</span><span class="y">’18–’23</span></a>
+          <a href="#gen5"><span class="n fr">5</span><span class="t">The Sound Era</span><span class="y">’23– </span></a>
+        </nav>
+      </div>
+
+      <div>
+        <div class="card-stage">
+          <div class="card" id="card">
+            <canvas id="holo"></canvas>
+            <div class="gloss" id="gloss"></div>
+            <div class="frame"></div>
+            <div class="edition mono">№ 01–05 / 05</div>
+            <div class="label">
+              <div class="big fr">K-POP</div>
+              <div class="sub">Holographic edition · five eras</div>
+            </div>
+          </div>
+        </div>
+        <div class="card-hint">Move your pointer across the card</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="define reveal">
+    <p class="define-lead fr">A generation isn’t an official label — it’s where fans and critics draw the lines, using three signals.</p>
+    <dl>
+      <div>
+        <dt class="fr">Debut window</dt>
+        <dd>Groups that trained and launched in the same span share a system, a business model, and their rivalries.</dd>
+      </div>
+      <div>
+        <dt class="fr">Platform</dt>
+        <dd>Each era rides a technology — terrestrial TV, then Asian tours, YouTube, TikTok, and now fan-messaging apps.</dd>
+      </div>
+      <div>
+        <dt class="fr">Sound</dt>
+        <dd>The dominant style shifts: hip-hop experiments, EDM choruses, maximalist performance, then easy-listening hooks.</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="era" id="gen1" data-gen="1">
+    <div class="era-top reveal">
+      <div class="era-num fr">1</div>
+      <div class="era-title">
+        <h2 class="fr">The Founding Era</h2>
+        <div class="era-sub">Late 1990s – early 2000s · built the idol system</div>
+      </div>
+      <div class="era-strip"><canvas data-strip="88"></canvas></div>
+    </div>
+    <div class="era-body reveal">
+      <p class="era-desc">The blueprint generation. Agencies built the trainee-to-idol pipeline from scratch, and dedicated fan clubs — with official colours and balloons — were born. The music leaned hard on hip-hop, rap breaks, and bold experimental fashion, aimed almost entirely at the domestic Korean market.</p>
+      <p class="era-traits">hip-hop influence · rap breaks · experimental fashion · birth of the trainee system · TV-driven</p>
+    </div>
+    <div class="roster-head reveal"><span class="lbl">Defining acts</span><span class="rule"></span></div>
+    <div class="feat reveal">
+      <div class="act"><div class="nm fr">Seo Taiji &amp; Boys</div><div class="mt">1992 · genre pioneers</div></div>
+      <div class="act"><div class="nm fr">H.O.T.</div><div class="mt">1996 · SM Entertainment</div></div>
+    </div>
+    <div class="index reveal">
+      <div class="row"><span class="nm">Sechs Kies</span><span class="mt">1997 · DSP</span></div>
+      <div class="row"><span class="nm">S.E.S.</span><span class="mt">1997 · SM</span></div>
+      <div class="row"><span class="nm">Fin.K.L</span><span class="mt">1998 · DSP</span></div>
+      <div class="row"><span class="nm">Shinhwa</span><span class="mt">1998 · longest-active</span></div>
+      <div class="row"><span class="nm">g.o.d</span><span class="mt">1999 · JYP era</span></div>
+      <div class="row"><span class="nm">Baby V.O.X</span><span class="mt">1997 · DR</span></div>
+    </div>
+  </section>
+
+  <section class="era" id="gen2" data-gen="2">
+    <div class="era-top reveal">
+      <div class="era-num fr">2</div>
+      <div class="era-title">
+        <h2 class="fr">The Golden Age</h2>
+        <div class="era-sub">Mid 2000s – early 2010s · the Hallyu Wave</div>
+      </div>
+      <div class="era-strip"><canvas data-strip="332"></canvas></div>
+    </div>
+    <div class="era-body reveal">
+      <p class="era-desc">K-pop’s first major export boom. Groups conquered Japan and South-east Asia, and the toolkit fans know today took shape: official lightsticks, collectible photocards, and stadium fan chants. The sound turned glossy and electronic, built on instantly hummable hooks and ever-bigger music videos.</p>
+      <p class="era-traits">electronic choruses · Hallyu exports · lightsticks standardised · photocards · point choreography</p>
+    </div>
+    <div class="roster-head reveal"><span class="lbl">Defining acts</span><span class="rule"></span></div>
+    <div class="feat reveal">
+      <div class="act"><div class="nm fr">Girls’ Generation</div><div class="mt">2007 · SM Entertainment</div></div>
+      <div class="act"><div class="nm fr">BIGBANG</div><div class="mt">2006 · YG Entertainment</div></div>
+    </div>
+    <div class="index reveal">
+      <div class="row"><span class="nm">TVXQ</span><span class="mt">2003 · SM</span></div>
+      <div class="row"><span class="nm">Super Junior</span><span class="mt">2005 · SM</span></div>
+      <div class="row"><span class="nm">Wonder Girls</span><span class="mt">2007 · JYP</span></div>
+      <div class="row"><span class="nm">KARA</span><span class="mt">2007 · DSP</span></div>
+      <div class="row"><span class="nm">SHINee</span><span class="mt">2008 · SM</span></div>
+      <div class="row"><span class="nm">2NE1</span><span class="mt">2009 · YG</span></div>
+      <div class="row"><span class="nm">f(x)</span><span class="mt">2009 · SM</span></div>
+      <div class="row"><span class="nm">BEAST / Highlight</span><span class="mt">2009 · Cube</span></div>
+      <div class="row"><span class="nm">T-ara</span><span class="mt">2009 · Core Contents</span></div>
+      <div class="row"><span class="nm">INFINITE</span><span class="mt">2010 · Woollim</span></div>
+      <div class="row"><span class="nm">Sistar</span><span class="mt">2010 · Starship</span></div>
+      <div class="row"><span class="nm">miss A</span><span class="mt">2010 · JYP</span></div>
+      <div class="row"><span class="nm">Apink</span><span class="mt">2011 · Play M</span></div>
+    </div>
+  </section>
+
+  <section class="era" id="gen3" data-gen="3">
+    <div class="era-top reveal">
+      <div class="era-num fr">3</div>
+      <div class="era-title">
+        <h2 class="fr">The Global Breakthrough</h2>
+        <div class="era-sub">2012 – 2017 · YouTube &amp; the Billboard era</div>
+      </div>
+      <div class="era-strip"><canvas data-strip="276"></canvas></div>
+    </div>
+    <div class="era-body reveal">
+      <p class="era-desc">The era K-pop went truly global. International fandoms organised online to push groups onto Western charts, and acts built high-concept “lore” across albums and videos. Choreography grew more complex, world tours got bigger, and a handful of groups became household names far beyond Asia.</p>
+      <p class="era-traits">complex choreography · high-concept lore · global streaming · Billboard campaigns · stadium tours</p>
+    </div>
+    <div class="roster-head reveal"><span class="lbl">Defining acts</span><span class="rule"></span></div>
+    <div class="feat reveal">
+      <div class="act"><div class="nm fr">BTS</div><div class="mt">2013 · HYBE (Big Hit)</div></div>
+      <div class="act"><div class="nm fr">BLACKPINK</div><div class="mt">2016 · YG Entertainment</div></div>
+    </div>
+    <div class="index reveal">
+      <div class="row"><span class="nm">EXO</span><span class="mt">2012 · SM</span></div>
+      <div class="row"><span class="nm">GOT7</span><span class="mt">2014 · JYP</span></div>
+      <div class="row"><span class="nm">Red Velvet</span><span class="mt">2014 · SM</span></div>
+      <div class="row"><span class="nm">MAMAMOO</span><span class="mt">2014 · RBW</span></div>
+      <div class="row"><span class="nm">SEVENTEEN</span><span class="mt">2015 · Pledis</span></div>
+      <div class="row"><span class="nm">TWICE</span><span class="mt">2015 · JYP</span></div>
+      <div class="row"><span class="nm">GFRIEND</span><span class="mt">2015 · Source</span></div>
+      <div class="row"><span class="nm">MONSTA X</span><span class="mt">2015 · Starship</span></div>
+      <div class="row"><span class="nm">NCT</span><span class="mt">2016 · SM</span></div>
+      <div class="row"><span class="nm">ASTRO</span><span class="mt">2016 · Fantagio</span></div>
+      <div class="row"><span class="nm">KARD</span><span class="mt">2017 · DSP · co-ed</span></div>
+    </div>
+  </section>
+
+  <section class="era" id="gen4" data-gen="4">
+    <div class="era-top reveal">
+      <div class="era-num fr">4</div>
+      <div class="era-title">
+        <h2 class="fr">The Viral Era</h2>
+        <div class="era-sub">2018 – mid 2023 · TikTok &amp; the challenge</div>
+      </div>
+      <div class="era-strip"><canvas data-strip="192"></canvas></div>
+    </div>
+    <div class="era-body reveal">
+      <p class="era-desc">Short-form video rewired how songs spread. Dance challenges and digital content became core marketing, choreography turned razor-sharp and performance-heavy, and EDM-leaning hooks dominated. Line-ups grew more international, and “monster rookie” groups broke records faster than ever.</p>
+      <p class="era-traits">TikTok challenges · intense performance · EDM hooks · international members · digital-first</p>
+    </div>
+    <div class="roster-head reveal"><span class="lbl">Defining acts</span><span class="rule"></span></div>
+    <div class="feat reveal">
+      <div class="act"><div class="nm fr">Stray Kids</div><div class="mt">2018 · JYP Entertainment</div></div>
+      <div class="act"><div class="nm fr">IVE</div><div class="mt">2021 · Starship</div></div>
+    </div>
+    <div class="index reveal">
+      <div class="row"><span class="nm">(G)I-DLE</span><span class="mt">2018 · Cube</span></div>
+      <div class="row"><span class="nm">ATEEZ</span><span class="mt">2018 · KQ</span></div>
+      <div class="row"><span class="nm">TOMORROW X TOGETHER</span><span class="mt">2019 · HYBE</span></div>
+      <div class="row"><span class="nm">ITZY</span><span class="mt">2019 · JYP</span></div>
+      <div class="row"><span class="nm">aespa</span><span class="mt">2020 · SM</span></div>
+      <div class="row"><span class="nm">ENHYPEN</span><span class="mt">2020 · HYBE</span></div>
+      <div class="row"><span class="nm">STAYC</span><span class="mt">2020 · High Up</span></div>
+      <div class="row"><span class="nm">Kep1er</span><span class="mt">2021 · WAKEONE</span></div>
+      <div class="row"><span class="nm">LE SSERAFIM</span><span class="mt">2022 · HYBE</span></div>
+      <div class="row"><span class="nm">NMIXX</span><span class="mt">2022 · JYP</span></div>
+    </div>
+  </section>
+
+  <section class="era" id="gen5" data-gen="5">
+    <div class="era-top reveal">
+      <div class="era-num fr">5</div>
+      <div class="era-title">
+        <h2 class="fr">The Sound Era</h2>
+        <div class="era-sub">Mid 2023 – present · from dance trends to sound trends</div>
+      </div>
+      <div class="era-strip"><canvas data-strip="158"></canvas></div>
+    </div>
+    <div class="era-body reveal">
+      <p class="era-desc">The current chapter pivots from viral choreography toward viral audio — easy-listening hooks built for endless replays. Promotion runs in shorter cycles with teaser-heavy short-form content, while fan-communication apps put idols in closer, more constant contact with their audiences.</p>
+      <p class="era-traits">sound trends · easy-listening hooks · shorter promo cycles · teaser-led · fan-messaging apps</p>
+    </div>
+    <div class="roster-head reveal"><span class="lbl">Defining acts</span><span class="rule"></span></div>
+    <div class="feat reveal">
+      <div class="act"><div class="nm fr">NewJeans</div><div class="mt">2022 · ADOR · gen 4/5 debated</div></div>
+      <div class="act"><div class="nm fr">ZEROBASEONE</div><div class="mt">2023 · WAKEONE</div></div>
+    </div>
+    <div class="index reveal">
+      <div class="row"><span class="nm">RIIZE</span><span class="mt">2023 · SM</span></div>
+      <div class="row"><span class="nm">BOYNEXTDOOR</span><span class="mt">2023 · KOZ</span></div>
+      <div class="row"><span class="nm">KISS OF LIFE</span><span class="mt">2023 · S2</span></div>
+      <div class="row"><span class="nm">BABYMONSTER</span><span class="mt">2023 · YG</span></div>
+      <div class="row"><span class="nm">ALL(H)OURS</span><span class="mt">2024 · EDEN</span></div>
+      <div class="row"><span class="nm">TWS</span><span class="mt">2024 · Pledis</span></div>
+      <div class="row"><span class="nm">ILLIT</span><span class="mt">2024 · BELIFT</span></div>
+      <div class="row"><span class="nm">NOWADAYS</span><span class="mt">2024 · Cube · now NOWZ</span></div>
+      <div class="row"><span class="nm">KATSEYE</span><span class="mt">2024 · HYBE×GEFFEN · global group</span></div>
+      <div class="row"><span class="nm">MEOVV</span><span class="mt">2024 · THEBLACKLABEL</span></div>
+      <div class="row"><span class="nm">izna</span><span class="mt">2024 · WAKEONE</span></div>
+      <div class="row"><span class="nm">XLOV</span><span class="mt">2025 · 257 Ent · genderless</span></div>
+      <div class="row"><span class="nm">Hearts2Hearts</span><span class="mt">2025 · SM</span></div>
+    </div>
+    <p class="note reveal"><em>Note:</em> generation boundaries are debated, not official. NewJeans in particular gets sorted into the late 4th or early 5th generation depending on who you ask — the lines are a fan-and-critic convention, not a rulebook.</p>
+  </section>
+
+  <section class="era tourzone" id="tour">
+    <div class="tour-head reveal">
+      <h2 class="fr">On Tour · 2026</h2>
+      <span class="live"><span class="dot"></span>Live snapshot</span>
+    </div>
+    <p class="era-desc reveal">The genre that built its identity on live spectacle is having its biggest touring year yet — stadium runs, first-ever world tours and arena circuits from five generations at once. Here's a snapshot of who's on the road.</p>
+    <div class="ticker reveal" id="ticker" aria-hidden="true"><div class="ticker-track" id="tickerTrack"></div></div>
+    <div class="tours reveal" id="tours"></div>
+    <p class="tour-foot reveal">Snapshot as of June 2026 — line-ups and dates shift constantly and this page won't refresh itself. Always confirm on official sellers (Ticketmaster, Interpark, Weverse, or the agency's own site) and steer clear of unverified resellers.</p>
+    <div class="roster-head reveal"><span class="lbl">What a K-pop concert feels like</span><span class="rule"></span></div>
+    <div class="culture reveal">
+      <div class="cul"><span class="ce">🌊</span><div><h4>Lightstick oceans</h4><p>Thousands of synced lightsticks turn a venue into one colour-coded sea — many steered in real time from the soundboard.</p></div></div>
+      <div class="cul"><span class="ce">🗣️</span><div><h4>Fanchants</h4><p>Crowds shout memorised call-and-response lines and member names on cue, often louder than the track itself.</p></div></div>
+      <div class="cul"><span class="ce">🎤</span><div><h4>The encore "ment"</h4><p>After the setlist, idols return for unscripted talking and a final song while the crowd keeps singing.</p></div></div>
+      <div class="cul"><span class="ce">💌</span><div><h4>Soundcheck &amp; fansigns</h4><p>Early-entry soundchecks and post-promo signing events keep the idol-and-fan bond unusually close.</p></div></div>
+    </div>
+  </section>
+
+  <section class="era releasezone" id="releases">
+    <div class="tour-head reveal">
+      <h2 class="fr">Newest Releases · 2026</h2>
+      <span class="live"><span class="dot"></span>Fresh drops</span>
+    </div>
+    <p class="era-desc reveal">The comebacks, debuts and singles lighting up the charts right now — tap through to listen.</p>
+    <div class="releases reveal" id="releases-grid"></div>
+    <p class="tour-foot reveal">Snapshot as of June 2026 — release slates move fast. Confirm dates on each act's official channels or your streaming service.</p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="close fr">Every era thought it was the last word. Each one was a setup for the next.</div>
+    <p>Generation labels are a useful shorthand, not a science. They group acts by debut window, the platform that carried them, and the sound that defined them — and reasonable fans disagree about the edges. The one constant: roughly every five years, the rules get rewritten.</p>
+    <div class="sig">A field catalogue of K-pop · An overview, not an official ranking</div>
+  </div>
+</footer>
+</main>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function h2r(h,s,l){
+    h=((h%360)+360)%360; s/=100; l/=100;
+    var c=(1-Math.abs(2*l-1))*s, x=c*(1-Math.abs((h/60)%2-1)), m=l-c/2, r=0,g=0,b=0;
+    if(h<60){r=c;g=x;} else if(h<120){r=x;g=c;} else if(h<180){g=c;b=x;}
+    else if(h<240){g=x;b=c;} else if(h<300){r=x;b=c;} else {r=c;b=x;}
+    return [(r+m)*255,(g+m)*255,(b+m)*255];
+  }
+
+  function makeHolo(canvas, o){
+    var ctx = canvas.getContext('2d', {willReadFrequently:true});
+    var W=o.w, H=o.h;
+    canvas.width=W; canvas.height=H;
+    var s=(o.seed>>>0)||1;
+    function rnd(){ s=(s*1664525+1013904223)>>>0; return s/4294967296; }
+    var warpA=rnd()*6.283, warpB=rnd()*6.283;
+    var lineFreq=0.05+rnd()*0.03;
+    var ang=(-0.7+rnd()*0.5), ca=Math.cos(ang), sa=Math.sin(ang);
+    var hueBase=o.hueBase, hueSpread=o.hueSpread;
+    var nSpk=o.sparkles|0, spk=[];
+    for(var i=0;i<nSpk;i++) spk.push({x:rnd()*W,y:rnd()*H,r:0.5+rnd()*1.5,p:rnd()*6.283});
+    var img=ctx.createImageData(W,H), d=img.data;
+    function render(tx,ty,t){
+      for(var y=0;y<H;y++){
+        var wy=Math.cos(y*0.015+warpB-t*0.2)*7;
+        for(var x=0;x<W;x++){
+          var u=x*ca+y*sa;
+          var warp=Math.sin(x*0.012+warpA+t*0.3)*7+wy;
+          var phase=(u+warp)*lineFreq + Math.sin((x-y)*0.018+ty*1.8)*0.5 + tx*1.1 + t*0.12;
+          var hue=hueBase + hueSpread*Math.sin(phase);
+          var spec=Math.sin((x*0.02+y*0.018)+tx*2.6-ty*1.8+t*0.4); spec=spec>0?spec*spec:0;
+          var light=70 + spec*23 - 7*Math.sin(y*0.03+warpB);
+          if(light<44)light=44; if(light>96)light=96;
+          var sat=58 + 18*Math.sin(u*0.05+warpA); if(sat<32)sat=32; if(sat>86)sat=86;
+          var rgb=h2r(hue,sat,light), idx=(y*W+x)*4;
+          d[idx]=rgb[0]; d[idx+1]=rgb[1]; d[idx+2]=rgb[2]; d[idx+3]=255;
+        }
+      }
+      ctx.putImageData(img,0,0);
+      if(nSpk){
+        for(var k=0;k<nSpk;k++){ var sp=spk[k], tw=0.5+0.5*Math.sin(t*2+sp.p);
+          ctx.globalAlpha=0.2+0.6*tw; ctx.fillStyle='#fff';
+          ctx.beginPath(); ctx.arc(sp.x,sp.y,sp.r*(0.6+tw*0.7),0,6.283); ctx.fill(); }
+        ctx.globalAlpha=1;
+      }
+    }
+    return render;
+  }
+
+  var card=document.getElementById('card');
+  var holoEl=document.getElementById('holo');
+  var gloss=document.getElementById('gloss');
+  var renderHero=makeHolo(holoEl,{w:200,h:280,seed:73,hueBase:285,hueSpread:188,sparkles:96});
+  var rx=0,ry=0,tRX=0,tRY=0,gx=50,gy=38,hovering=false,lastPaint=0;
+
+  function setGloss(){
+    gloss.style.background='radial-gradient(circle at '+gx+'% '+gy+'%, '
+      +'oklch(1 0 0 / .55), oklch(1 0 0 / .12) 32%, oklch(0.2 0 0 / .10) 70%)';
+  }
+
+  if(reduce){
+    renderHero(0.2,-0.1,0); setGloss();
+  } else {
+    card.addEventListener('pointermove',function(e){
+      var r=card.getBoundingClientRect();
+      var px=(e.clientX-r.left)/r.width, py=(e.clientY-r.top)/r.height;
+      tRY=(px-0.5)*20; tRX=(py-0.5)*-15; gx=px*100; gy=py*100; hovering=true;
+    });
+    card.addEventListener('pointerleave',function(){hovering=false;});
+    requestAnimationFrame(function loop(now){
+      requestAnimationFrame(loop);
+      if(!hovering){ var tt=now*0.001;
+        tRX=Math.sin(tt*0.55)*4.5; tRY=Math.cos(tt*0.4)*5.5;
+        gx=50+Math.sin(tt*0.5)*22; gy=40+Math.cos(tt*0.42)*16; }
+      rx+=(tRX-rx)*0.10; ry+=(tRY-ry)*0.10;
+      card.style.transform='rotateX('+rx.toFixed(2)+'deg) rotateY('+ry.toFixed(2)+'deg)';
+      setGloss();
+      if(now-lastPaint>55){ lastPaint=now; renderHero(ry/20, rx/15, now*0.0009); }
+    });
+  }
+
+  var strips=[];
+  document.querySelectorAll('canvas[data-strip]').forEach(function(cv,i){
+    var hue=parseFloat(cv.getAttribute('data-strip'));
+    var r=makeHolo(cv,{w:240,h:80,seed:101+i*37,hueBase:hue,hueSpread:94,sparkles:42});
+    strips.push({r:r,phase:i*1.3});
+    r(0.4,-0.2,i*1.3);
+  });
+  if(!reduce && strips.length){
+    var stripLast=0;
+    requestAnimationFrame(function sloop(now){
+      requestAnimationFrame(sloop);
+      if(now-stripLast<70) return;            /* ~14fps — plenty for a foil drift */
+      stripLast=now;
+      var t=now*0.0006;
+      for(var i=0;i<strips.length;i++){
+        var s=strips[i];
+        s.r(0.4+Math.sin(t*0.7+s.phase)*0.6, -0.2+Math.cos(t*0.5+s.phase)*0.4, t+s.phase);
+      }
+    });
+  }
+
+  (function(){
+    var GENHUE={'1':88,'2':332,'3':276,'4':192,'5':158};
+    var variants=['orb','heart','star','ring','diamond'];
+
+    var STICK={ bigbang:'crown', bts:'orb', blackpink:'heart', twice:'candy', seventeen:'diamond' };
+
+    var EMOJI={
+      seotaijiboys:'🎸', hot:'🤍', sechskies:'💛', ses:'🧚', finkl:'💗', shinhwa:'🧡', god:'🍼', babyvox:'💋',
+      bigbang:'👑', tvxq:'❤️', superjunior:'🔵', shinee:'🩵', '2ne1':'🖤', fx:'❌', wondergirls:'💃',
+      kara:'🐞', infinite:'♾️', sistar:'☀️', missa:'🅰️', apink:'🌸', beasthighlight:'🔆', highlight:'🔆', beast:'🐻',
+      bts:'💜', exo:'🪐', blackpink:'🩷', twice:'🍭', seventeen:'💎', redvelvet:'🍰', girlsgeneration:'🌹',
+      gfriend:'🦋', mamamoo:'🐮', got7:'🐥', monstax:'🌙', astro:'🌟', nct:'🟢',
+      straykids:'🐺', ateez:'🏴‍☠️', txt:'💫', tomorrowxtogether:'💫', enhypen:'🧛', itzy:'✨', gidle:'🔥',
+      aespa:'🔮', ive:'🪩', lesserafim:'💙', newjeans:'🐰', nmixx:'🌀', stayc:'🎀', kep1er:'🌐', zerobaseone:'0️⃣',
+      riize:'🌊', boynextdoor:'🚪', kissoflife:'💘', babymonster:'👾', illit:'🧲', tws:'🫧',
+      katseye:'👁️', meovv:'🐱', izna:'⚡', xlov:'🌗', hearts2hearts:'💞', allhours:'⏰', nowadays:'⏳',
+      tara:'🕺', kard:'🃏'
+    };
+
+    var SPOTIFY={
+      bts:'3Nrfpe0tUJi4K4DXYWgMUX', blackpink:'41MozSoPIsD1dJM0CLPjZF',
+      girlsgeneration:'0Sadg1vgvaPqGTOjxu0N6c', bigbang:'4Kxlr1PRlDKEB0ekOCyHgX',
+      straykids:'2dIgFjalVxs4ThymZ67YCE', ive:'6RHTUrRF63xao58xh9FXYJ',
+      newjeans:'6HvZYsbFfjnjFrWF950C9d', zerobaseone:'7cjg7EkeZy3OI5o9Qthc6n',
+      exo:'3cjEqqelV9zb4BYE3qDQ4O', twice:'7n2Ycct7Beij7Dj7meI4X0',
+      seventeen:'7nqOGRxlXj7N2JYbgNEjYH', aespa:'6YVMFz59CuY7ngCxTxjpxE',
+      redvelvet:'1z4g3DjTBBZKhvAroFlhOM', lesserafim:'4SpbR6yFEvexJuaBpgAU5p',
+      gidle:'2AfmfGFbe0A0WsTYm0SDTx', itzy:'2KC9Qb60EaY0kW4eH68vr3',
+      enhypen:'5t5FqBwTcgKTaWmfEbwQY9', tomorrowxtogether:'0ghlgldX5Dd6720Q3qFyQB',
+      ateez:'68KmkJeZGfwe1OUaivBa2L', nct:'48eO052eSDcn8aTxiv6QaG',
+      riize:'2jOm3cYujQx6o1dxuiuqaX',
+      babymonster:'1SIocsqdEefUTE6XKGUiVS', illit:'36cgvBn0aadzOijnjjwqMN',
+      kep1er:'5R7AMwDeroq6Ls0COQYpS4', boynextdoor:'4hnHLgMSOiqERWBL4jINP1',
+      kissoflife:'4TEK9tIkcoxib4GxT3O4ky', tws:'4GgBKgxhc649frZDHcXIEz',
+      nmixx:'28ot3wh4oNmoFOdVajibBl', stayc:'01XYiBYaoMJcNhPokrg0l0',
+      got7:'6nfDaffa50mKtEOwR8g4df', mamamoo:'0XATRDCYuuGhk0oE7C0o5G',
+      monstax:'4TnGh5PKbSjpYqpIdlW5nz', gfriend:'0qlWcS66ohOIi0M8JZwPft',
+      astro:'4pz4uzOMpJQyV8UTsDy4H8',
+      tvxq:'6nVMMEywS5Y4tsHPKx1nIo', superjunior:'6gzXCdfYfFe5XKhPKkYqxV',
+      shinee:'2hRQKC0gqlZGPrmUKbcchR', '2ne1':'1l0mKo96Jh9HVYONcRl3Yp',
+      fx:'3wRA5UYoo08BBKJnzyKkpF', wondergirls:'3Cv2vi3WTl8VZOTdrBkKdM',
+      kara:'7aZ221EQfonNG2lO9Hh192', infinite:'1bkpTEmumLC3xc7HgMsttU',
+      sistar:'2wTLheTmMcFCA4hdY8hZJP', missa:'1BEohdSWSBggmO979tzRwW',
+      apink:'2uWcrwgWmZcQc3IPBs3tfU', beasthighlight:'3T0fMfxYBU3q9oAUAdPIsr',
+      sechskies:'6uRyNreOHUvWPNGnKfIo27', ses:'61HUG80Xma4rnXsqfZkzeM',
+      finkl:'2aRLyjYp7WPr4EkjkI1gvS', shinhwa:'0jVvkFPa6YbFXQ3Qmhita0',
+      babyvox:'7H5LMtjHqkyH4U8dpLR4lo', seotaijiboys:'52Gsa9Zypqztm2DeNkQfCm',
+      katseye:'3c0gDdb9lhnHGFtP4prQpn', xlov:'2b8aDRZFgUGWiUGchpWsyC',
+      meovv:'08hHTBHlv0WRXWlyrsb6Kv', izna:'6EB5QC7lGAu7bSuWQ416d4', hearts2hearts:'1ZLU77nRzQIaP23mVSYpCQ',
+      allhours:'2m5lRlEucobWPA1V6xqxWO', nowadays:'1iZwr6w3TWPNezX8yCtRBg',
+      tara:'1R52cwGf75yTf7I3Q0Irf8', kard:'2JhAlkmukNvarUpGhTFXUQ'
+    };
+    function lightstick(hue, variant){
+      var core='hsl('+hue+' 92% 66%)', body='hsl('+hue+' 90% 60%)', top;
+      if(variant==='balloon') return '<svg viewBox="0 0 24 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+        +'<path d="M12 18.5 C13.6 22 10.4 25 12 28.5 C13 31 11.4 33 12 35.5" fill="none" stroke="var(--ink)" stroke-width="1.3" opacity="0.55"/>'
+        +'<ellipse cx="12" cy="11" rx="7.6" ry="8.6" fill="'+body+'" opacity="0.2"/>'
+        +'<ellipse cx="12" cy="11" rx="6.1" ry="7.1" fill="'+core+'"/>'
+        +'<path d="M10.4 17.2 L13.6 17.2 L12 19.9 Z" fill="'+core+'"/></svg>';
+      if(variant==='heart') top='<path d="M12 16.4C6.8 11.4 6 5.2 9.6 5.2c2 0 2.4 2 2.4 2s.4-2 2.4-2c3.6 0 2.8 6.2-2.4 11.2Z" fill="'+core+'"/>';
+      else if(variant==='star') top='<path d="M12 3l1.9 5.6h5.9l-4.8 3.5 1.8 5.7L12 14.2 7.2 17.8 9 12.1 4.2 8.6h5.9z" fill="'+core+'"/>';
+      else if(variant==='ring') top='<circle cx="12" cy="10" r="6" fill="none" stroke="'+core+'" stroke-width="3.1"/>';
+      else if(variant==='diamond') top='<rect x="6.9" y="4.9" width="10.2" height="10.2" rx="2" transform="rotate(45 12 10)" fill="'+core+'"/>';
+      else if(variant==='crown') top='<path d="M5 15 L6 6.5 L9.6 10.8 L12 5 L14.4 10.8 L18 6.5 L19 15 Z" fill="'+core+'"/>';
+      else if(variant==='orb') top='<circle cx="12" cy="10" r="6.6" fill="'+core+'"/><circle cx="9.7" cy="7.7" r="1.7" fill="#fff" opacity="0.5"/>';
+      else if(variant==='candy') top='<circle cx="12" cy="11" r="5.8" fill="'+core+'"/><path d="M12 5.2 L8.7 2.9 L9.4 6.4 Z M12 5.2 L15.3 2.9 L14.6 6.4 Z" fill="'+core+'"/><circle cx="12" cy="5.2" r="1.1" fill="'+core+'"/>';
+      else top='<circle cx="12" cy="10" r="6.4" fill="'+core+'"/>';
+      return '<svg viewBox="0 0 24 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">'
+        +'<rect x="9.7" y="18" width="4.6" height="19" rx="2.3" fill="var(--ink)" opacity="0.78"/>'
+        +'<rect x="8.5" y="16.4" width="7" height="3.6" rx="1.8" fill="var(--ink)" opacity="0.9"/>'
+        +'<circle cx="12" cy="10" r="9" fill="'+body+'" opacity="0.22"/>'+top+'</svg>';
+    }
+    function stickEl(hue,name){
+      var s=document.createElement('span'); s.className='stick';
+      s.style.setProperty('--gw','hsl('+hue+' 90% 55%)');
+      s.textContent=EMOJI[norm(name)]||'🎶'; return s;
+    }
+    /* Fetch the official artist photo via Spotify's oEmbed endpoint (CORS-open, no key,
+       sanctioned for embedding). Falls back silently to the emoji sigil if it fails. */
+    function loadSpotifyPhoto(id,img){
+      if(!id) return;
+      fetch('https://open.spotify.com/oembed?url=spotify:artist:'+id)
+        .then(function(r){ return r.ok ? r.json() : null; })
+        .then(function(d){ if(d && d.thumbnail_url){ img.onload=function(){img.classList.add('loaded');}; img.src=d.thumbnail_url; } })
+        .catch(function(){});
+    }
+    /* Lazy-load photos as rows scroll into view so we don't fire every request at once. */
+    var photoObs=('IntersectionObserver' in window) ? new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          var sp=e.target, id=sp.getAttribute('data-spid'), im=sp.querySelector('img');
+          if(id && im && !sp.__done){ sp.__done=1; loadSpotifyPhoto(id,im); }
+          photoObs.unobserve(sp);
+        }
+      });
+    }, {rootMargin:'300px 0px'}) : null;
+    function thumbEl(hue,name,id,big){
+      var s=document.createElement('span'); s.className='thumb'+(big?'':' thumb-sm');
+      s.textContent=EMOJI[norm(name)]||'🎶';
+      if(id){ var im=document.createElement('img'); im.alt=name+' — official artist photo'; im.loading='lazy';
+        s.appendChild(im); s.setAttribute('data-spid',id);
+        if(photoObs) photoObs.observe(s); else loadSpotifyPhoto(id,im); }
+      return s;
+    }
+    function spotEl(){
+      var s=document.createElement('span'); s.className='spot'; s.setAttribute('aria-hidden','true');
+      s.innerHTML='<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">'
+        +'<circle cx="12" cy="12" r="12" fill="#1DB954"/>'
+        +'<g fill="none" stroke="#0a0710" stroke-width="2" stroke-linecap="round">'
+        +'<path d="M5.7 9.1C9.9 7.8 14.8 8.2 18.3 10.4"/>'
+        +'<path d="M6.9 12.5C10.4 11.4 14.6 11.8 17.4 13.6"/>'
+        +'<path d="M7.8 15.6C10.6 14.8 13.9 15.1 16 16.4"/></g></svg>'; return s;
+    }
+    function chevEl(){
+      var s=document.createElement('span'); s.className='grp-chev'; s.setAttribute('aria-hidden','true');
+      s.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" '
+        +'stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>'; return s;
+    }
+    function norm(n){ return n.toLowerCase().replace(/[^a-z0-9]/g,''); }
+    function spotURL(name){
+      var q=name.replace(/\s*\/\s*/g,' ').replace(/\s+/g,' ').trim();
+      return 'https://open.spotify.com/search/'+encodeURIComponent(q)+'/artists';
+    }
+
+    var openGrp=null;
+    function openItem(grp){
+      grp.classList.add('open');
+      grp.querySelector('.grp-head').setAttribute('aria-expanded','true');
+      var f=grp.querySelector('iframe[data-src]');
+      if(f){ f.src=f.getAttribute('data-src'); }
+      openGrp=grp;
+      if(window.__duckSoundtrack) window.__duckSoundtrack();    /* never two players at once */
+    }
+    function closeItem(grp){
+      grp.classList.remove('open');
+      grp.querySelector('.grp-head').setAttribute('aria-expanded','false');
+      var f=grp.querySelector('iframe[data-src]');
+      if(f){ f.src='about:blank'; }
+      if(openGrp===grp) openGrp=null;
+      /* deferred so switching groups doesn't blip the soundtrack back on */
+      setTimeout(function(){ if(!openGrp && window.__restoreSoundtrack) window.__restoreSoundtrack(); }, 0);
+    }
+    window.__closeOpenGroup=function(){ if(openGrp) closeItem(openGrp); };
+    function toggle(grp){
+      if(grp.classList.contains('open')) closeItem(grp);
+      else { if(openGrp) closeItem(openGrp); openItem(grp); }
+    }
+
+    function build(el, hue, variant, featured){
+      var nmEl=el.querySelector('.nm'), mtEl=el.querySelector('.mt');
+      var name=nmEl.textContent.trim(), id=SPOTIFY[norm(name)];
+      var sig=STICK[norm(name)]; if(sig) variant=sig;
+      var grp=document.createElement('div'); grp.className='grp';
+      var head=document.createElement('button'); head.type='button'; head.className='grp-head';
+      head.setAttribute('aria-expanded','false');
+      head.appendChild(thumbEl(hue,name,id,featured));
+      var txt=document.createElement('span'); txt.className='grp-txt';
+      txt.appendChild(nmEl); if(mtEl) txt.appendChild(mtEl);
+      head.appendChild(txt);
+      var cta=document.createElement('span'); cta.className='grp-cta';
+      cta.appendChild(spotEl()); cta.appendChild(chevEl());
+      head.appendChild(cta);
+
+      var panel=document.createElement('div'); panel.className='grp-panel';
+      var inner=document.createElement('div'); inner.className='grp-inner';
+      var pad=document.createElement('div'); pad.className='grp-pad';
+      if(id){
+        var pl=document.createElement('div'); pl.className='player';
+        var fb=document.createElement('a'); fb.className='player-fallback';
+        fb.href='https://open.spotify.com/artist/'+id; fb.target='_blank'; fb.rel='noopener noreferrer';
+        var lab=document.createElement('span'); lab.textContent='Open '+name+' on Spotify';
+        fb.appendChild(spotEl()); fb.appendChild(lab);
+        var f=document.createElement('iframe'); f.className='spot-embed'; f.setAttribute('frameborder','0');
+        f.setAttribute('allow','autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture');
+        f.title='Spotify player — '+name;
+        f.setAttribute('data-src','https://open.spotify.com/embed/artist/'+id+'?utm_source=generator');
+        pl.appendChild(fb); pl.appendChild(f); pad.appendChild(pl);
+      } else {
+        var a=document.createElement('a'); a.className='grp-link';
+        a.href=spotURL(name); a.target='_blank'; a.rel='noopener noreferrer';
+        a.appendChild(spotEl());
+        var l2=document.createElement('span'); l2.textContent='Find '+name+' on Spotify';
+        a.appendChild(l2); pad.appendChild(a);
+      }
+      inner.appendChild(pad); panel.appendChild(inner);
+      grp.appendChild(head); grp.appendChild(panel);
+      el.parentNode.replaceChild(grp, el);
+      head.addEventListener('click', function(){ toggle(grp); });
+      return grp;
+    }
+
+    document.querySelectorAll('.era').forEach(function(sec){
+      var gen=sec.getAttribute('data-gen'), base=GENHUE[gen]||285, vi=0;
+      var pick=function(){ return gen==='1' ? 'balloon' : variants[vi%variants.length]; };
+      sec.querySelectorAll('.feat .act').forEach(function(act){
+        build(act, base+(vi%2?7:-6), pick(), true); vi++;
+      });
+      sec.querySelectorAll('.index .row').forEach(function(row){
+        build(row, base+(((vi*13)%17)-8), pick()); vi++;
+      });
+    });
+  })();
+
+  var reveals=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduce){
+    var ro=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); ro.unobserve(e.target);} });
+    },{threshold:0.12,rootMargin:'0px 0px -8% 0px'});
+    reveals.forEach(function(el){
+      var rows=el.querySelectorAll('.grp');
+      rows.forEach(function(rw,j){ rw.style.transition='transform .55s var(--ease)'; rw.style.transitionDelay=(j*0.035)+'s'; });
+      ro.observe(el);
+    });
+  } else { reveals.forEach(function(el){el.classList.add('in');}); }
+
+  var links=Array.prototype.slice.call(document.querySelectorAll('.idx a'));
+  var eras=Array.prototype.slice.call(document.querySelectorAll('.era'));
+  var hues={gen1:88,gen2:332,gen3:276,gen4:192,gen5:158};
+  var spy=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){
+        var id=e.target.id;
+        links.forEach(function(l){ l.classList.toggle('active', l.getAttribute('href')==='#'+id); });
+        if(hues[id]!=null) document.documentElement.style.setProperty('--foil-hue',hues[id]);
+      }
+    });
+  },{rootMargin:'-45% 0px -45% 0px'});
+  eras.forEach(function(s){spy.observe(s);});
+})();
+</script>
+<script>
+(function(){
+  var TOURS=[
+    {e:'💜',a:'BTS',t:"World Tour 'Arirang'",s:'Stadiums',d:'Jun – Nov 2026',r:'Seoul · Tokyo · LA · London',n:'28 stadium shows',st:'On sale',sc:'on'},
+    {e:'🍭',a:'TWICE',t:"'This Is For' World Tour",s:'World tour',d:'Apr – Sep 2026',r:'Asia · N. America · Europe',n:'40+ dates · 9 countries',st:'On sale',sc:'on'},
+    {e:'🧛',a:'ENHYPEN',t:"'Blood Saga' World Tour",s:'World tour',d:'May – Oct 2026',r:'Asia · N. America · LatAm',n:'33 shows · 18 cities',st:'Presale',sc:'soon'},
+    {e:'🪩',a:'IVE',t:"'Show What I Am' World Tour",s:'Arenas',d:'Mar – Aug 2026',r:'Asia · N. America · Europe',n:'26 arena dates',st:'On sale',sc:'on'},
+    {e:'🔮',a:'aespa',t:"Live Tour 'SYNK : aexis Line'",s:'World tour',d:'Feb – Jul 2026',r:'Seoul · Asia · N. America',n:'22 shows',st:'Few left',sc:'soon'},
+    {e:'💙',a:'LE SSERAFIM',t:"Tour 'Pureflow'",s:'World tour',d:'Apr – Sep 2026',r:'Asia · N. America · Europe',n:'30 shows · 16 cities',st:'On sale',sc:'on'},
+    {e:'✨',a:'ITZY',t:"3rd World Tour 'Tunnel Vision'",s:'World tour',d:'Mar – Aug 2026',r:'Asia · N. America · Europe',n:'24 shows',st:'On sale',sc:'on'},
+    {e:'🔥',a:'(G)I-DLE',t:"World Tour 'Syncopation'",s:'World tour',d:'May – Oct 2026',r:'Asia · NA · EU · LatAm',n:'34 shows · 20 cities',st:'Presale',sc:'soon'},
+    {e:'💫',a:'TOMORROW X TOGETHER',t:"Tour 'Act : Tomorrow'",s:'World tour',d:'Jun – Dec 2026',r:'Asia · N. America · Europe',n:'38 shows',st:'On sale',sc:'on'},
+    {e:'🧲',a:'ILLIT',t:"Live 'Press Start ♥'",s:'Live',d:'Jul – Sep 2026',r:'Seoul · Tokyo · Osaka',n:'9 fan-concert dates',st:'Sold out',sc:'out'},
+    {e:'👁️',a:'KATSEYE',t:"'The Wildworld Tour'",s:'World tour',d:'Aug – Dec 2026',r:'N. America · Europe · Asia',n:'first world tour · 20 shows',st:'On sale',sc:'on'},
+    {e:'🌀',a:'NMIXX',t:'First Global Tour',s:'World tour',d:'Mar – Aug 2026',r:'Asia · N. America · Europe',n:'first world tour · 18 shows',st:'On sale',sc:'on'},
+    {e:'🃏',a:'KARD',t:'2026 Europe Tour',s:'Europe',d:'Oct – Nov 2026',r:'London · Paris · Berlin · Warsaw',n:'12 club & theatre dates',st:'On sale',sc:'on'},
+    {e:'🌗',a:'XLOV',t:'First European Tour',s:'Europe',d:'Sep – Oct 2026',r:'Paris · Berlin · Amsterdam',n:'debut EU run · 8 shows',st:'Presale',sc:'soon'}
+  ];
+  var HUES=[158,276,192,332,88,206];
+  var esc=function(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');};
+  var tg=document.getElementById('tours');
+  if(tg){ TOURS.forEach(function(d,i){
+    var c=document.createElement('div'); c.className='tcard'; c.style.setProperty('--ch',HUES[i%HUES.length]);
+    c.innerHTML='<span class="tstatus s-'+d.sc+'"><span class="d"></span>'+esc(d.st)+'</span>'
+      +'<div class="ico">'+d.e+'</div><div class="act">'+esc(d.a)+'</div>'
+      +'<div class="tour">'+esc(d.t)+'</div>'
+      +'<div class="tmeta">'
+        +'<div class="ln"><span class="k">📅</span><span class="v">'+esc(d.d)+'</span></div>'
+        +'<div class="ln"><span class="k">📍</span><span class="v">'+esc(d.r)+'</span></div>'
+        +'<div class="ln"><span class="k">🎟️</span><span class="v"><b>'+esc(d.n)+'</b></span></div>'
+      +'</div>'
+      +'<div class="tfoot"><span class="tag">'+esc(d.s)+'</span>'
+      +'<a class="tbuy" href="https://www.ticketmaster.com/search?q='+encodeURIComponent(d.a)+'" target="_blank" rel="noopener noreferrer">'
+      +(d.sc==='out'?'Find resale →':'Get tickets →')+'</a></div>';
+    tg.appendChild(c);
+  }); }
+  var tk=document.getElementById('tickerTrack');
+  if(tk){ var one='';
+    TOURS.forEach(function(d){ one+='<span class="tk"><span class="e">'+d.e+'</span><span>'+esc(d.a)
+      +'</span><span class="t">'+esc(d.t)+'</span><span class="sep">✦</span></span>'; });
+    tk.innerHTML=one+one;
+  }
+
+  // ---- Newest releases (June 2026 snapshot) ----
+  var RELEASES=[
+    {a:'NewJeans',id:'6HvZYsbFfjnjFrWF950C9d',t:'Supernatural Pt.2',ty:'Single',d:'Jun 2026',h:158},
+    {a:'Stray Kids',id:'2dIgFjalVxs4ThymZ67YCE',t:'DOMINATE',ty:'Full Album',d:'Jun 2026',h:192},
+    {a:'RIIZE',id:'2jOm3cYujQx6o1dxuiuqaX',t:'ODYSSEY',ty:'Mini Album',d:'Jun 2026',h:158},
+    {a:'aespa',id:'6YVMFz59CuY7ngCxTxjpxE',t:'SYNK : Parallel',ty:'EP',d:'May 2026',h:192},
+    {a:'SEVENTEEN',id:'7nqOGRxlXj7N2JYbgNEjYH',t:'Sector 17:17',ty:'Full Album',d:'Jun 2026',h:276},
+    {a:'IVE',id:'6RHTUrRF63xao58xh9FXYJ',t:'Midnight Romance',ty:'EP',d:'May 2026',h:192},
+    {a:'LE SSERAFIM',id:'4SpbR6yFEvexJuaBpgAU5p',t:'Crimson',ty:'EP',d:'Apr 2026',h:192},
+    {a:'TWICE',id:'7n2Ycct7Beij7Dj7meI4X0',t:'Strategy II',ty:'EP',d:'May 2026',h:276},
+    {a:'ENHYPEN',id:'5t5FqBwTcgKTaWmfEbwQY9',t:'Romance: Eternal',ty:'Full Album',d:'May 2026',h:192},
+    {a:'KATSEYE',id:'3c0gDdb9lhnHGFtP4prQpn',t:'Gnarly World',ty:'Single',d:'Jun 2026',h:158},
+    {a:'BABYMONSTER',id:'1SIocsqdEefUTE6XKGUiVS',t:'WILD',ty:'Single',d:'Jun 2026',h:158},
+    {a:'ZEROBASEONE',id:'7cjg7EkeZy3OI5o9Qthc6n',t:'New Horizon',ty:'EP',d:'Jun 2026',h:158}
+  ];
+  function relPhoto(id,img){ fetch('https://open.spotify.com/oembed?url=spotify:artist:'+id)
+    .then(function(r){return r.ok?r.json():null;})
+    .then(function(x){if(x&&x.thumbnail_url){img.onload=function(){img.classList.add('loaded');};img.src=x.thumbnail_url;}}).catch(function(){}); }
+  var rg=document.getElementById('releases-grid');
+  if(rg){ RELEASES.forEach(function(d){
+    var c=document.createElement('div'); c.className='rcard'; c.style.setProperty('--rh',d.h);
+    c.innerHTML='<span class="rthumb">🎵<img alt="'+esc(d.a)+'"></span>'
+      +'<div class="rbody"><div class="ra">'+esc(d.a)+'</div><div class="rt">'+esc(d.t)+'</div>'
+      +'<div class="rmeta"><span class="rty">'+esc(d.ty)+'</span><span class="rd">'+esc(d.d)+'</span></div></div>'
+      +'<a class="rlisten" href="https://open.spotify.com/artist/'+d.id+'" target="_blank" rel="noopener noreferrer">▶ Listen</a>';
+    rg.appendChild(c);
+    var im=c.querySelector('img'); if(im) relPhoto(d.id,im);
+  }); }
+})();
+</script>
+
+<!-- ============ THE HALL OF ERAS — camera, doorways, soundtrack ============ -->
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var GENS={1:{h:88,name:"Founding Era"},2:{h:332,name:"Golden Age"},3:{h:276,name:"Global Breakthrough"},4:{h:192,name:"Viral Era"},5:{h:158,name:"Sound Era"}};
+  var CLUBS=[
+    {n:"Shinhwa",id:"0jVvkFPa6YbFXQ3Qmhita0",g:1,y:1998,deb:"Mar 24, 1998",ag:"SM / Shinhwa Company",mem:"6",fan:"Shinhwa Changjo"},
+    {n:"S.E.S.",id:"61HUG80Xma4rnXsqfZkzeM",g:1,y:1997,deb:"Nov 1, 1997",ag:"SM Entertainment",mem:"3",fan:"Friend"},
+    {n:"BIGBANG",id:"4Kxlr1PRlDKEB0ekOCyHgX",g:2,y:2006,deb:"Aug 19, 2006",ag:"YG Entertainment",mem:"4",fan:"VIP"},
+    {n:"Girls’ Generation",id:"0Sadg1vgvaPqGTOjxu0N6c",g:2,y:2007,deb:"Aug 5, 2007",ag:"SM Entertainment",mem:"8",fan:"SONE"},
+    {n:"SHINee",id:"2hRQKC0gqlZGPrmUKbcchR",g:2,y:2008,deb:"May 25, 2008",ag:"SM Entertainment",mem:"5",fan:"Shawol"},
+    {n:"2NE1",id:"1l0mKo96Jh9HVYONcRl3Yp",g:2,y:2009,deb:"May 17, 2009",ag:"YG Entertainment",mem:"4",fan:"Blackjack"},
+    {n:"EXO",id:"3cjEqqelV9zb4BYE3qDQ4O",g:3,y:2012,deb:"Apr 8, 2012",ag:"SM Entertainment",mem:"9",fan:"EXO-L"},
+    {n:"BTS",id:"3Nrfpe0tUJi4K4DXYWgMUX",g:3,y:2013,deb:"Jun 13, 2013",ag:"HYBE (Big Hit)",mem:"7",fan:"ARMY"},
+    {n:"Red Velvet",id:"1z4g3DjTBBZKhvAroFlhOM",g:3,y:2014,deb:"Aug 1, 2014",ag:"SM Entertainment",mem:"5",fan:"ReVeluv"},
+    {n:"SEVENTEEN",id:"7nqOGRxlXj7N2JYbgNEjYH",g:3,y:2015,deb:"May 26, 2015",ag:"Pledis Entertainment",mem:"13",fan:"CARAT"},
+    {n:"TWICE",id:"7n2Ycct7Beij7Dj7meI4X0",g:3,y:2015,deb:"Oct 20, 2015",ag:"JYP Entertainment",mem:"9",fan:"ONCE"},
+    {n:"BLACKPINK",id:"41MozSoPIsD1dJM0CLPjZF",g:3,y:2016,deb:"Aug 8, 2016",ag:"YG Entertainment",mem:"4",fan:"BLINK"},
+    {n:"Stray Kids",id:"2dIgFjalVxs4ThymZ67YCE",g:4,y:2018,deb:"Mar 25, 2018",ag:"JYP Entertainment",mem:"8",fan:"STAY"},
+    {n:"ITZY",id:"2KC9Qb60EaY0kW4eH68vr3",g:4,y:2019,deb:"Feb 12, 2019",ag:"JYP Entertainment",mem:"5",fan:"MIDZY"},
+    {n:"aespa",id:"6YVMFz59CuY7ngCxTxjpxE",g:4,y:2020,deb:"Nov 17, 2020",ag:"SM Entertainment",mem:"4",fan:"MY"},
+    {n:"IVE",id:"6RHTUrRF63xao58xh9FXYJ",g:4,y:2021,deb:"Dec 1, 2021",ag:"Starship Entertainment",mem:"6",fan:"DIVE"},
+    {n:"LE SSERAFIM",id:"4SpbR6yFEvexJuaBpgAU5p",g:4,y:2022,deb:"May 2, 2022",ag:"HYBE (Source)",mem:"5",fan:"FEARNOT"},
+    {n:"NewJeans",id:"6HvZYsbFfjnjFrWF950C9d",g:5,y:2022,deb:"Jul 22, 2022",ag:"ADOR",mem:"5",fan:"Bunnies"},
+    {n:"ZEROBASEONE",id:"7cjg7EkeZy3OI5o9Qthc6n",g:5,y:2023,deb:"Jul 10, 2023",ag:"WAKEONE",mem:"9",fan:"ZEROSE"},
+    {n:"RIIZE",id:"2jOm3cYujQx6o1dxuiuqaX",g:5,y:2023,deb:"Sep 4, 2023",ag:"SM Entertainment",mem:"6",fan:"BRIIZE"},
+    {n:"KATSEYE",id:"3c0gDdb9lhnHGFtP4prQpn",g:5,y:2024,deb:"Jun 28, 2024",ag:"HYBE × Geffen",mem:"6",fan:"EYEKON"}
+  ];
+  var SPACING=1050, START=-1500;
+  var world=document.getElementById('world');
+  if(!world) return;
+
+  function loadPhoto(id,img){
+    fetch('https://open.spotify.com/oembed?url=spotify:artist:'+id)
+      .then(function(r){return r.ok?r.json():null;})
+      .then(function(d){if(d&&d.thumbnail_url){img.onload=function(){img.classList.add('loaded');};img.src=d.thumbnail_url;}})
+      .catch(function(){});
+  }
+
+  CLUBS.forEach(function(c,i){
+    var hue=GENS[c.g].h, z=START - i*SPACING, side=(i%2===0)?-1:1, x=side*440, rotY=side*-26, y=(i%2===0)?-14:22;
+    var ring=document.createElement('div'); ring.className='ring'; ring.style.setProperty('--h',hue);
+    ring.style.transform='translate(-50%,-50%) translate3d(0,0,'+z+'px)';
+    world.appendChild(ring);
+    var club=document.createElement('div'); club.className='club'; club.style.setProperty('--h',hue);
+    club.style.transform='translate(-50%,-50%) translate3d('+x+'px,'+y+'px,'+z+'px) rotateY('+rotY+'deg)';
+    club.innerHTML=
+      '<div class="club-inner">'
+      + '<div class="cface cfront">'
+      +   '<div class="sign">'+c.n+'</div>'
+      +   '<div class="frame"><img alt="'+c.n+' — official artist photo"><div class="gen">Gen '+c.g+' · '+c.y+'</div></div>'
+      +   '<div class="fliphint">⟳ info</div>'
+      + '</div>'
+      + '<div class="cface cback"><div class="bk">'
+      +   '<div class="bk-name">'+c.n+'</div>'
+      +   '<dl>'
+      +     '<div><dt>Debut</dt><dd>'+c.deb+'</dd></div>'
+      +     '<div><dt>Agency</dt><dd>'+c.ag+'</dd></div>'
+      +     '<div><dt>Members</dt><dd>'+c.mem+'</dd></div>'
+      +     '<div><dt>Fandom</dt><dd>'+c.fan+'</dd></div>'
+      +   '</dl>'
+      +   '<a class="bk-listen" href="https://open.spotify.com/artist/'+c.id+'" target="_blank" rel="noopener noreferrer">▶ Spotify</a>'
+      + '</div></div>'
+      + '</div>'
+      + '<div class="spill"></div>';
+    world.appendChild(club);
+    c._img=club.querySelector('img'); c._z=z;
+    club.addEventListener('click', function(){ club.classList.toggle('flipped'); });
+    var lk=club.querySelector('.bk-listen'); if(lk) lk.addEventListener('click', function(e){ e.stopPropagation(); });
+  });
+
+  var loaded={};
+  function ensurePhotos(z){ CLUBS.forEach(function(c,i){ if(loaded[i])return; if(z > (-c._z - 2600)){ loaded[i]=1; loadPhoto(c.id,c._img);} }); }
+
+  var DEPTH=(CLUBS.length+1.4)*SPACING;
+  var hall=document.getElementById('hall'), spacer=document.getElementById('hallSpacer');
+  var hud=document.getElementById('hud'), hudName=document.getElementById('hudName'), hudEra=document.getElementById('hudEra');
+  function vh(){return window.innerHeight;}
+  var hallLen;
+  function sizeSpacer(){ hallLen=DEPTH*0.62; spacer.style.height=(hallLen+vh())+'px'; }
+  sizeSpacer();
+
+  var curZ=0, tgtZ=0;
+  var endgate=document.getElementById('endgate');
+  function inCatalog(){ return document.body.classList.contains('in-catalog'); }
+  function updateHud(z){
+    var best=0,bestD=1e9; CLUBS.forEach(function(c,i){var d=Math.abs(z-(-c._z));if(d<bestD){bestD=d;best=i;}});
+    var c=CLUBS[best], g=GENS[c.g];
+    if(hudName.textContent!==c.n){ hudName.textContent=c.n; hudEra.textContent='Gen '+c.g+' · '+g.name; hud.style.setProperty('--h',g.h); }
+  }
+  function apply(z){ world.style.setProperty('--hz',z.toFixed(1)); ensurePhotos(z); updateHud(z); }
+
+  function onScroll(){
+    if(inCatalog()) return;
+    var p=Math.min(1,Math.max(0, 1 - window.scrollY/hallLen));   // scroll UP = walk forward
+    tgtZ=p*DEPTH;
+    if(p>0.02) document.body.classList.add('scrolled'); else document.body.classList.remove('scrolled');
+    endgate.classList.toggle('show', p>=0.985);   // the gate appears once you reach the top (the end)
+    if(reduce){ curZ=tgtZ; apply(curZ); }
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', function(){ sizeSpacer(); onScroll(); });
+
+  // start at the BOTTOM — the beginning of the hall; scrolling up walks you forward.
+  // Mobile browsers frequently ignore a single early scrollTo (URL-bar / layout timing),
+  // which would strand you at scrollY 0 = the END. So we re-snap until the user interacts.
+  if('scrollRestoration' in history){ try{ history.scrollRestoration='manual'; }catch(e){} }
+  var userInteracted=false;
+  ['touchstart','wheel','keydown','pointerdown'].forEach(function(ev){
+    window.addEventListener(ev, function(){ userInteracted=true; }, {passive:true, once:true});
+  });
+  function snapToStart(){ if(userInteracted || inCatalog()) return; window.scrollTo(0, hallLen); onScroll(); curZ=tgtZ; if(reduce) apply(curZ); }
+  snapToStart();
+  requestAnimationFrame(snapToStart);
+  window.addEventListener('load', function(){ sizeSpacer(); snapToStart(); });
+  [80,250,600,1200].forEach(function(t){ setTimeout(snapToStart, t); });
+  window.addEventListener('orientationchange', function(){ setTimeout(function(){ sizeSpacer(); snapToStart(); onScroll(); }, 300); });
+  if(window.visualViewport){ window.visualViewport.addEventListener('resize', function(){ sizeSpacer(); if(!userInteracted) snapToStart(); }); }
+  if(!reduce){
+    requestAnimationFrame(function loop(){ requestAnimationFrame(loop); if(inCatalog()) return; curZ+=(tgtZ-curZ)*0.08; apply(curZ); });
+  }
+
+  function enterCatalog(){ document.body.classList.add('in-catalog'); endgate.classList.remove('show'); window.scrollTo(0,0); }
+  var catalogBtn=document.getElementById('catalogBtn');
+  if(catalogBtn) catalogBtn.addEventListener('click', enterCatalog);
+  var skipBtn=document.getElementById('skipBtn');
+  if(skipBtn) skipBtn.addEventListener('click', enterCatalog);
+  var backHall=document.getElementById('backHall');
+  if(backHall) backHall.addEventListener('click', function(){ document.body.classList.remove('in-catalog'); window.scrollTo(0, Math.round(hallLen*0.5)); });
+
+  var enterBtn=document.getElementById('enterBtn');
+  if(enterBtn) enterBtn.addEventListener('click', function(){
+    if(window.__spc){ try{ window.__spc.play(); }catch(e){} }
+    document.body.classList.add('entered');
+    window.scrollTo({top:Math.max(0, hallLen - window.innerHeight*0.55), behavior:reduce?'auto':'smooth'});
+  });
+})();
+</script>
+<script>
+  // ---- single-player coordination: the soundtrack and any group embed are mutually exclusive ----
+  window.__spPlaying=false; window.__wasPlaying=false; window.__ducked=false;
+  window.__duckSoundtrack=function(){
+    if(!window.__ducked){ window.__wasPlaying=!!window.__spPlaying; window.__ducked=true; }
+    if(window.__spc && window.__spPlaying){ try{ window.__spc.pause(); }catch(e){} }
+  };
+  window.__restoreSoundtrack=function(){
+    if(!window.__ducked) return; window.__ducked=false;
+    if(window.__spc && window.__wasPlaying){ try{ window.__spc.resume(); }catch(e){} }
+    window.__wasPlaying=false;
+  };
+  window.onSpotifyIframeApiReady = function(IFrameAPI){
+    window.__IFrameAPI=IFrameAPI;
+    var el=document.getElementById('spotify-embed'); if(!el) return;
+    IFrameAPI.createController(el, {uri:'spotify:playlist:37i9dQZF1DX9tPFwDMOaN1', width:'100%', height:'80'}, function(ctrl){
+      window.__spc=ctrl;
+      ctrl.addListener('playback_update', function(e){
+        var playing = !(e && e.data && e.data.isPaused);
+        // when the user actually starts the soundtrack, stop any open group player
+        if(playing && !window.__spPlaying && !window.__ducked && window.__closeOpenGroup){ window.__closeOpenGroup(); }
+        window.__spPlaying = playing;
+      });
+    });
+  };
+</script>
+<script src="https://open.spotify.com/embed/iframe-api/v1" async></script>
+</body>
+</html>
