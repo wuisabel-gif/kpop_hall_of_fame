@@ -1,4 +1,4 @@
-# Kpop Crush
+# Kpop Wiki
 
 🇰🇷 [한국어로 읽기](README.ko.md)
 
