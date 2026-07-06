@@ -8,6 +8,12 @@
 
 복도 끝에 닿으면 카탈로그로 들어간다 — 5세대 전체가 펼쳐지고, 누가 언제 데뷔했는지, 날짜와 티켓 링크가 달린 2026 투어 보드, 그리고 방금 나온 신곡까지.
 
+## 데모
+
+[![데모 영상 보기](https://img.youtube.com/vi/3Hpv9rn86IE/maxresdefault.jpg)](https://www.youtube.com/watch?v=3Hpv9rn86IE)
+
+![데모](demo.gif)
+
 ## 실행하기
 
 `index.html` 파일을 열기만 하면 된다. 그게 전부다 — 파일 하나, 빌드 없음, 설치 없음. 사진과 음악은 인터넷 연결이 필요하다.

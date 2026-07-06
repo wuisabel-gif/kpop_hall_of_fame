@@ -8,6 +8,12 @@ It opens in a dark hallway. Every group gets its own glowing doorway — Shinhwa
 
 Reach the end of the hall and you step into the catalogue — all five generations laid out, who debuted when, a 2026 tour board with dates and ticket links, and whatever just dropped.
 
+## Demo
+
+[![Watch the demo](https://img.youtube.com/vi/3Hpv9rn86IE/maxresdefault.jpg)](https://www.youtube.com/watch?v=3Hpv9rn86IE)
+
+![demo](demo.gif)
+
 ## Run it
 
 Open `index.html`. That's the whole thing — one file, no build, no install. Photos and music need a connection.
